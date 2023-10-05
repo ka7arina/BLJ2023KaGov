@@ -1,24 +1,311 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h3>Probezeitbericht</h3>
-    <br>
-    <br>
-    <form action="/action_page.php">
-    <label for="lern">Lernende/r:</label>
-    <input type="text" id="lern" name="lern"><br>
-    <label for="beruf">Lernberuf:</label>
-  <select name="beruf" id="beruf">
-    <option value="apli">ApplikationsentwicklerIn</option>
-    <option value="plat">PlatformentwicklerIn</option>
-    <option value="media">MediamatikerIn</option>
-    <option value="kv">Kauffrau/Kauffmann</option>
-  </select>
-  <br>
-  <input type="radio" id="bms" name="choosebms" value="bms">
-  <label for="bms">mit BMS</label>
-  <input type="radio" id="no_bms" name="choosebms" value="no_bms">
-  <label for="no_bms">ohne BMS</label>
-  </form>
+
+    <title>Probezeitbericht</title>
+
+</head>
+
+<body>
+
+    <br><h3>Probezeitbericht</h3>
+
+    <br><br><label for ="name"> Lernende/r:</label>
+
+    <input type="text" id="name" name="name" size="20" maxlenght="50">
+
+       
+
+    <p>Lehrberuf:
+
+        <select id="Lehrberuf:">
+
+        <option value="option1">Optionen</option>
+
+        <option value="option2">Applikationsentwickler/in</option>
+
+        <option value="option3">Plattformentwickler/in</option>
+
+        <option value="option4">Mediamatiker/in</option>
+
+        <option value="option5">Kauffrau/Kaufmann</option>
+
+      </select>
+
+     
+
+      <span id="audgewählterLehrberuf"></span>
+
+ 
+
+      <script>
+
+        var dropdown = document.getElementById("Lehrberuf");
+
+        var ausgewählterLehrberuf = document.getElementById("ausgewählterLehrberuf");
+
+      </script>
+
+ 
+
+      <fieldset>
+
+        <legend>Berufsmaturität</legend>
+
+ 
+
+        <label for="mit BMS">mit BMS</label>
+
+        <input type="radio" id="mit BMS" name="Berufsmaturität" value="mit BMS" />
+
+ 
+
+        <label for="ohne BMS">ohne BMS</label>
+
+        <input
+
+        type="radio"
+
+        id="ohne BMS"
+
+        name="Berufsmaturität"
+
+        value="ohne BMS"
+
+        />
+
+      </fieldset>
+
+     
+
+      <label for="lehrbeginn">Lehrbeginn:</label>
+
+      <input type="date" id="lehrbeginn" name="lehrbeginn">
+
+ 
+
+      <br><br><label for ="name"> Berufsbildnere/in:</label>
+
+    <input type="text" id="name" name="name" size="20" maxlenght="50">
+
+ 
+
+    <p style="font-size: 24px;"><b>Gesamteindruck</b></p>
+
+    <form>
+
+        <textarea name="gesamteindruck"
+
+         id="gesamteindruck"
+
+         cols="30"
+
+         rows="10"
+
+         ></textarea>
+
+    </form>
+
+    <p style="font-size: 24px"><b>Beurteilung</b></p>
+
+    <p></p>
+
+    <hr />
+
+    <label>
+
+        <p style="font-size: 20px;">Fachkompetenzen</p>
+
+        <p>Fertigkeiten, Kenntnise, Qualität, Qualität etc.</p>
+
+        <input type="checkbox" name="fachkompetenz" value="sehr gut" />
+
+        sehr gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="gut" />
+
+        gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="genügend" />
+
+        genügend
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="ungenügend" />
+
+        ungenügend
+
+     </label>
+
+     
+
+     <hr />
+
+     <label>
+
+        <p style="font-size: 20px;">Methodenkompetenz</p>
+
+        <p>Lernfähigkeit, Arbeitsmethodik, Arbeitssicherheit, Kreativität etc.</p>
+
+        <input type="checkbox" name="fachkompetenz" value="sehr gut" />
+
+        sehr gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="gut" />
+
+        gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="genügend" />
+
+        genügend
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="ungenügend" />
+
+        ungenügend
+
+     </label>
+
+ 
+
+     <hr />
+
+     <label>
+
+        <p style="font-size: 20px;">Sozialkompetenz</p>
+
+        <p>Teamfähigkeit, Firmenbezug, umwweltgerechtes Verhalten etc.</p>
+
+        <input type="checkbox" name="fachkompetenz" value="sehr gut" />
+
+        sehr gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="gut" />
+
+        gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="genügend" />
+
+        genügend
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="ungenügend" />
+
+        ungenügend
+
+     </label>
+
+ 
+
+     <hr />
+
+     <label>
+
+        <p style="font-size: 20px;">Selbstkontrolle</p>
+
+        <p>Selbständigkeit, Leistungsbereitschaft, Flexibilität etc.</p>
+
+        <input type="checkbox" name="fachkompetenz" value="sehr gut" />
+
+        sehr gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="gut" />
+
+        gut
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="genügend" />
+
+        genügend
+
+        <br />
+
+        <input type="checkbox" name="fachkompetenz" value="ungenügend" />
+
+        ungenügend
+
+     </label>
+
+ 
+
+     <br><h3>Fazit</h3>
+
+ 
+
+     <p>probezeit:
+
+        <select id="Probezeit:">
+
+        <option value="option1">Optionen</option>
+
+        <option value="option2">bestanden</option>
+
+        <option value="option3">verlängert</option>
+
+        <option value="option4">nicht bestanden</option>
+
+      </select>
+
+      <p style="font-size: 24px;"><b>Bemerkungen</b></p>
+
+      <form>
+
+          <textarea name="bemerkungen"
+
+           id="bemerkungen"
+
+           cols="30"
+
+           rows="10"
+
+           ></textarea>
+
+      </form>
+
+      <button type="submit">Speichern</button>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+</body>
+
+</html>
+
+hat Kontextmenü
