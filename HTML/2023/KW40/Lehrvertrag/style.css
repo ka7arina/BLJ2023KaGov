@@ -1,26 +1,45 @@
     .outerframe {
         display: inline-block;
         height: 2px;
-        width: 300px; 
+        width: 600px; 
     }
     
     .innerlabel {
         display: inline-block;
-        height: 30px;
-        width: 69px;
+        height: 40px;
+        width: 100px;
+        margin-left: 10px;
+        border: none;
     }
 
     .fieldset {
-        display: inline;
+        display: inline-block;
     }
 
     .h4 {
+        display: inline-block;
         font-family: 'Quicksand', sans-serif;
         font-size: 1em;
         color: #2b7da1
     }
     .p {
+        display: inline-block;
         font-family: 'Quicksand', sans-serif;
-        font-size: 0.9em;
+        font-size: 1em;
         color: #2b7da1
+
     }
+
+    .body {
+        display: inline-block;
+
+    }
+
+    fieldset {
+        display: inline-block;
+        background-color: #b2d0dd;
+        color: white;
+        border: none;
+      }
+
+      
