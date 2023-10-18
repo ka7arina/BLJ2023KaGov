@@ -1,5 +1,6 @@
 .vorname {
-        margin: auto;
+        text-align: center;
+        margin: 50%;
         display: block;
         width: 100%; 
         border: 1px solid #000000;
