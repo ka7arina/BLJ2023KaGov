@@ -1,8 +1,8 @@
-.input [type="text"] {
-        margin-left: 25%;
+.vorname {
+        margin: auto;
         display: block;
-        width: 50%; 
-        border: 1px solid #818181;
+        width: 100%; 
+        border: 1px solid #000000;
         padding: 5px;
     
     }
