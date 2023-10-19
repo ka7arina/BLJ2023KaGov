@@ -1,55 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+
+  <!--meta tags to make the site responsive-->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" 
+        content="width=device-width, 
+                    initial-scale=1">
+
+  <!--bootstrap-->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="jquery-3.7.1.min.js"></script>
 </head>
-<body>
-
+</body>
+<br><br>
 <div class="container">
-  <h2>Carousel Example</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="nieve.jpg" alt="Los Angeles" style="width:100%;">
-        <div class="centered">Hello World</div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>London</h2>
+        <p>London is the most populous city in the United Kingdom,
+        with a metropolitan area of over 13 million inhabitants.</p>
       </div>
-
-      <div class="item">
-        <img src="nieveellashq.jpg" alt="Chicago" style="width:100%;">
-        <div class="centered">Hello World</div>
+      <div class="col-sm-4">
+        <h2>Paris</h2>
+        <p>The Paris area is one of the largest population centers in Europe,
+        ith more than 12 million inhabitants.</p>
       </div>
-    
-      <div class="item">
-        <img src="OIP.jpg" alt="New york" style="width:100%;">
-        <div class="centered">Hello World</div>
+      <div class="col-sm-4">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the center of the Greater Tokyo Area,
+        and the most populous metropolitan area in the world.</p>
       </div>
     </div>
-
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
-</div>
 
-</body>
-</html>
+  <br>
+
+<div class="container mt-5">
+    <div class="carousel-container position-relative row">
+      
+    <!-- Sorry! Lightbox doesn't work - yet. -->
+      
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-slide-number="0">
+          <img src="IMG_0842.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="1">
+          <img src="IMG_0911test.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="2">
+          <img src="IMG_9321test.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="3">
+          <img src="IMG_1013.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="4">
+          <img src="IMG_1027.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="5">
+          <img src="IMG_2468.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+        <div class="carousel-item" data-slide-number="6">
+          <img src="IMG_2544.jpg" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Carousel Navigation -->
+    <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row mx-0">
+            <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+              <img src="IMG_0842.jpg" class="img-fluid" alt="...">
+            </div>
+            <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
+              <img src="IMG_0911test.jpg" class="img-fluid" alt="...">
+            </div>
+            <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
+              <img src="IMG_9321test.jpg" class="img-fluid" alt="...">
+            </div>
+            <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
+              <img src="IMG_1013.jpg" class="img-fluid" alt="...">
+            </div>
+            <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
+              <img src="IMG_1027.jpg" class="img-fluid" alt="...">
+            </div>
+            <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
+              <img src="IMG_2468.jpg" class="img-fluid" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row mx-0">
+            <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+              <img src="IMG_2544.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-2 px-1 py-2"></div>
+            <div class="col-2 px-1 py-2"></div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+    </div> <!-- /row -->
+    </div> <!-- /container -->
+
+    </html>
