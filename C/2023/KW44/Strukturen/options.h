@@ -44,15 +44,15 @@
 :  T Y P E   D E F I N I T I O N S
 \*==========================================================================*/
 
-typedef struct  TCustomer {
-unsigned int id;= 1000
+struct  Customer {
+unsigned int id;
 char firstname[40+1]
 char lastname[40+1]
 char birthyear[4+1]
 char weight[2+1]
 char height[3+1]
 
-} TCustomer;
+} TCustomer; 
 
 
 /*==========================================================================*\

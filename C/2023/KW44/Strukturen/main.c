@@ -29,7 +29,12 @@
 /*==========================================================================*\
 :  G L O B A L    V A R I A B L E S                             (definition)
 \*==========================================================================*/
-TCustomer family[4]; strncpy (family[0] .firstname, "John",sizeof(family[0] .birthyear = 1981;))
+
+struct Customer familyA;
+familyA.id = 2000;
+strcpy(familyA.firstname, "John");
+strcpy(familyA.lastname, "Doe");
+printf("Vorname: %s\n", familyA.firstname);
 
 /*==========================================================================*\
 :  L O C A L    V A R I A B L E S                               (definition)
