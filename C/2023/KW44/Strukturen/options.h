@@ -16,8 +16,6 @@
  *
  */
 
-#if !defined (INC__OPTIONS.H)
-#define INC__OPTIONS.H
 
 /*==========================================================================*\
 :  I N C L U D E S
@@ -40,22 +38,21 @@
 :  C O N S T A N T   D E F I N I T I O N S
 \*==========================================================================*/
 
-#define
 
 
 /*==========================================================================*\
 :  T Y P E   D E F I N I T I O N S
 \*==========================================================================*/
 
-typedef struct  Family {
-unsigned int id = 1000
+typedef struct  TCustomer {
+unsigned int id;= 1000
 char firstname[40+1]
 char lastname[40+1]
 char birthyear[4+1]
 char weight[2+1]
 char height[3+1]
 
-} Family;
+} TCustomer;
 
 
 /*==========================================================================*\
