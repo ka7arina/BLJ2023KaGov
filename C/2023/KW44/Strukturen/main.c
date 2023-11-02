@@ -1,59 +1,53 @@
-/*
- *  main.c
- *
- *
- *  Author  : Katarina Govedarica
- *
- *  Date    : 01.11.2023
- *
- *  Version : 1.0
- *
- *  Purpose : the main file
- *
- *
- *  History : 01.11.2023
- *
- *
- */
+#include <stdio.h>
+#include <stdlib.h>
+#include "options.h"
+
+typedef struct Person {
+char firstname[30+1];
+char lastname[30+1];
+int birthyear;
+int weight;
+int height;
+
+} TPerson;
+
+TPerson family[4];
+
+typedef struct fancyClub {
+    char clubname[30+1];
+    char clubtheme[20+1];
+} TfancyClub;
 
 
-/*==========================================================================*\
-:  D E F I N E S                                          (for preprocessor)
-\*==========================================================================*/
+void initFamily() {
+    TPerson john = {.firstname = "John", .lastname = "Doe", .birthyear = 1981, .weight = 91, .height = 196};
+    TPerson jane = {.firstname = "Jane", .lastname = "Doe", .birthyear = 1980, .weight = 64, .height = 178};
+    TPerson jack = {.firstname = "Jack", .lastname = "Doe", .birthyear = 2008, .weight = 40, .height = 163};
+    TPerson judy = {.firstname = "Judy", .lastname = "Doe", .birthyear = 2015, .weight = 30, .height = 124};
+    family[0] = john;
+    family[1] = jane;
+    family[2] = jack;
+    family[3] = judy;
+}
+
+void printFamily() {
+   // i dont know if this is correct //
+    printf("Vorname: %c \n Nachname: %c \n Geburtsdatum: %d \n Gewicht: %d \n Höhe: %d");
+}
+
+printPerson(TPerson person)
+findOldestFamilyMember()
+fancyClub()
 
 
-/*==========================================================================*\
-:  I N C L U D E S
-\*==========================================================================*/
-
-/*==========================================================================*\
-:  G L O B A L    V A R I A B L E S                             (definition)
-\*==========================================================================*/
-
-struct Customer familyA;
-familyA.id = 2000;
-strcpy(familyA.firstname, "John");
-strcpy(familyA.lastname, "Doe");
-printf("Vorname: %s\n", familyA.firstname);
-
-/*==========================================================================*\
-:  L O C A L    V A R I A B L E S                               (definition)
-\*==========================================================================*/
 
 
-/*==========================================================================*\
-:  L O C A L    F U N C T I O N    P R O T O T Y P E S         (declaration)
-\*==========================================================================*/
+int main() {
+
+initFamily();
 
 
-/*==========================================================================*\
-:  F U N C T I O N    I M P L E M E M T A T I O N
-\*==========================================================================*/
 
 
-/* ---------------------------------------------------------------------------
-    FUNCTION_NAME
-   ---------------------------------------------------------------------------
-
-    Description of function
-*/
+return 0;
+}
