@@ -31,24 +31,15 @@ void initFamily() {
 }
 
 void printFamily() {
-   // i dont know if this is correct //
-    for (int i = 0; i < 4; i++) {
-        printf("Vorname: %s \n Nachname: %s \n Geburtsdatum: %d \n Gewicht: %d \n Höhe: %d\n",
-               family[i].firstname,
-               family[i].lastname,
-               family[i].birthyear,
-               family[i].weight,
-               family[i].height);
+    int i;
+    for (i=0; i<4; i++) {
+        printPerson(family[i]);
     }
 }
 
+
 void printPerson(TPerson person) {
-   printf("First Name: %s\nLast Name: %s\nBirth Year: %d\nWeight: %d\nHeight: %d\n",
-        person.firstname,
-        person.lastname,
-        person.birthyear,
-        person.weight,
-        person.height); 
+  
 }
 
 findOldestFamilyMember()
