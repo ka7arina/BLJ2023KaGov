@@ -32,7 +32,14 @@ void initFamily() {
 
 void printFamily() {
    // i dont know if this is correct //
-    printf("Vorname: %c \n Nachname: %c \n Geburtsdatum: %d \n Gewicht: %d \n Höhe: %d");
+    for (int i = 0; i < 4; i++) {
+        printf("Vorname: %s \n Nachname: %s \n Geburtsdatum: %d \n Gewicht: %d \n Höhe: %d\n",
+               family[i].firstname,
+               family[i].lastname,
+               family[i].birthyear,
+               family[i].weight,
+               family[i].height);
+    }
 }
 
 printPerson(TPerson person)
