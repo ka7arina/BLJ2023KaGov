@@ -42,7 +42,15 @@ void printFamily() {
     }
 }
 
-printPerson(TPerson person)
+void printPerson(TPerson person) {
+   printf("First Name: %s\nLast Name: %s\nBirth Year: %d\nWeight: %d\nHeight: %d\n",
+        person.firstname,
+        person.lastname,
+        person.birthyear,
+        person.weight,
+        person.height); 
+}
+
 findOldestFamilyMember()
 fancyClub()
 
