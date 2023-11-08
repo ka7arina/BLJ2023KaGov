@@ -30,6 +30,15 @@ void initFamily() {
     family[3] = judy;
 }
 
+void printPerson(TPerson person) {
+
+    printf("Name: %s %s\n", person.firstname, person.lastname);
+    printf("Geburtsjahr: %d\n", person.birthyear);
+    printf("Gewicht: %d\n", person.weight);
+    printf("Größe: %d\n", person.height);
+}
+  
+
 void printFamily() {
     int i;
     for (i=0; i<4; i++) {
@@ -37,12 +46,19 @@ void printFamily() {
     }
 }
 
-
-void printPerson(TPerson person) {
   
+
+TPerson findOldestFamilyMember() {
+    TPerson oldest = family[0];
+    int i;
+    for (i=1; i<4; i++) {
+        if (family[i].birthyear < oldest.birthyear) {
+            oldest = family[i];
+        }
+    }
+    return oldest;
 }
 
-findOldestFamilyMember()
 fancyClub()
 
 
@@ -51,9 +67,9 @@ fancyClub()
 int main() {
 
 initFamily();
+printFamily();
+printPerson();
+findOldestFamilyMember();
 
-
-
-
-return 0;
 }
+
