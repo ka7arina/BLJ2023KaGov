@@ -42,6 +42,7 @@ void printFamily() {
     for (i=0; i<4; i++) {
         printPerson(family[i]);
     }
+
 }
 
 TPerson findOldestFamilyMember() {
