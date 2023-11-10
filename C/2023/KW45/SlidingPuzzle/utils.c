@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 #include <stdio.h>
 #include "utils.h"
 
@@ -26,6 +31,12 @@ void printField(int size, int field[size][size]) {
     printf("+---------------+-------------+---------------+----------------+---------+\n");
 }
 
+/**
+ * This function swaps the values of two given variables using their addresses.
+ * 
+ * @param num1  The address of the first variable.
+ * @param num2  The address of the second variable.
+ */
 void swapValues(int *num1, int *num2) {
     int temp = *num1;
     *num1 = *num2;
