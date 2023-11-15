@@ -9,7 +9,7 @@ typedef struct node {
 void printLinkedList(struct Node* head) {
     struct node* current = head;
     while (current != NULL) {
-        printf("%d ", current->data);
+        printf("%d\n", current->data);
         current = current->next;
     }
 }
@@ -42,5 +42,7 @@ struct node *a, *b, *c, *d, *e, *f;
 	e->next = f;
     f->next = NULL;
 
+
+	printLinkedList(a);
 
 }
