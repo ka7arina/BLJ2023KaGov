@@ -7,8 +7,7 @@ typedef struct node
 }
 node;
 
-/* Initialize nodes */
-struct node *head;
-struct node *one = NULL;
-struct node *two = NULL;
-struct node *three = NULL;
+// allocating the space of the node //
+struct node *a, *b;
+    a = malloc(sizeof(struct node));
+    b = malloc(sizeof(struct node));
