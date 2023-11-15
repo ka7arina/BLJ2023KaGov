@@ -19,7 +19,7 @@ struct node *a, *b;
 	a->data = 10;
     b->data = 20;
 
-
+// store the adress of b in the next variable of a //
 	a->next = b;
     b->next = NULL;
 }
