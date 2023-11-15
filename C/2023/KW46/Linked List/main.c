@@ -1,7 +1,14 @@
 #include <stdio.h>
 
-typedef struct Node {
-		int data;
-		struct Node *nextNode:
-		} TNode;
+typedef struct node
+{
+    int number;
+    struct node *next;
+}
+node;
 
+/* Initialize nodes */
+struct node *head;
+struct node *one = NULL;
+struct node *two = NULL;
+struct node *three = NULL;
