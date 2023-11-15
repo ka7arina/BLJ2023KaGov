@@ -13,37 +13,24 @@ struct node *create_node(int data) {
     return new_node;
 }
 
+void printLinkedList(struct Node* head) {
+    struct node* current = head;
+    while (current != NULL) {
+        printf("%d\n", current->data);
+        current = current->next;
+    }
+}
 
 int main() {
 
-// allocating the space of the node 
-struct node *a, *b, *c, *d, *e, *f;
-    a = malloc(sizeof(struct node));
-    b = malloc(sizeof(struct node));
-	c = malloc(sizeof(struct node));
-	d = malloc(sizeof(struct node));
-	e = malloc(sizeof(struct node));
-	f = malloc(sizeof(struct node));
+struct node *head = create_node(1);
+    struct node *second = create_node(2);
+    struct node *third = create_node(3);
 
-// set the values with a pointer
-	a->data = 10;
-    b->data = 20;
-	c->data = 30;
-	d->data = 40;
-	e->data = 50;
-	f->data = 60;
+    head->next = second;
+    second->next = third;
 
-// store the adress of b in the next variable of a
-	a->next = b;
-	b->next = c;
-	c->next = d;
-	d->next = e;
-	e->next = f;
-    f->next = NULL;
-
-
-	struct node *head = create_node(1);
-    printf("Data: %d\n", head->data);
+    printLinkedList(head);
     return 0;
 
 }
