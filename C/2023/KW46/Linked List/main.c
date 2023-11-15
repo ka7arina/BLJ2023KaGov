@@ -1,12 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node
-{
+typedef struct node {
     int data;
-    struct node *next;
+    struct node* next;
+} TNode;
+
+void printLinkedList(struct Node* head) {
+    struct node* current = head;
+    while (current != NULL) {
+        printf("%d ", current->data);
+        current = current->next;
+    }
 }
-node;
+
 
 int main() {
 
@@ -35,5 +42,5 @@ struct node *a, *b, *c, *d, *e, *f;
 	e->next = f;
     f->next = NULL;
 
-	printf("%d\n", f->data);
+
 }
