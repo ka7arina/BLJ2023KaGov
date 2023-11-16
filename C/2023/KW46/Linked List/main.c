@@ -1,48 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct node {
-    int data;
-    struct node* next;
-} TNode;
-
-void printLinkedList(struct Node* head) {
-    struct node* current = head;
-    while (current != NULL) {
-        printf("%d\n", current->data);
-        current = current->next;
-    }
-}
+#include "linkedlist.h"
 
 
 int main() {
 
-// allocating the space of the node 
-struct node *a, *b, *c, *d, *e, *f;
-    a = malloc(sizeof(struct node));
-    b = malloc(sizeof(struct node));
-	c = malloc(sizeof(struct node));
-	d = malloc(sizeof(struct node));
-	e = malloc(sizeof(struct node));
-	f = malloc(sizeof(struct node));
+TNode *head = NULL;
 
-// set the values with a pointer
-	a->data = 10;
-    b->data = 20;
-	c->data = 30;
-	d->data = 40;
-	e->data = 50;
-	f->data = 60;
+TNode *head = (TNode*)malloc(sizeof(TNode));
+TNode *second = (TNode*)malloc(sizeof(TNode));
+TNode *third = (TNode*)malloc(sizeof(TNode));
 
-// store the adress of b in the next variable of a
-	a->next = b;
-	b->next = c;
-	c->next = d;
-	d->next = e;
-	e->next = f;
-    f->next = NULL;
+head->next = second;
+second->next = third;
 
 
-	printLinkedList(a);
+printf("Linked List:\n");
+printLinkedList(head);
+
+addNode(&head, 5);
+
+printf("Updated Linked List:\n");
+printLinkedList(head);
+return 0;
 
 }
