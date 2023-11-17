@@ -1,13 +1,13 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-typedef struct node {
+typedef struct Node {
     int data;
-    struct node* next;
+    struct Node* next;
 } TNode;
 
-void printLinkedList(TNode *head);
-void addNode(TNode** head, int newData);
+void print_data(TNode *head);
+void addNode(TNode* head, int newData);
 
 
 #endif
