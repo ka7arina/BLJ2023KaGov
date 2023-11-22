@@ -21,12 +21,11 @@ public class Personen {
 
     @Override
     public String toString() {
-        return "Personen " +
+        return
                 "Name = '" + name + '\'' +
                 ", Age = '" + age + '\'' +
                 ", Place of Birth = '" + placeofbirth + '\'' +
                 ", Nationality = '" + nationality + '\'' +
-                ", ID = " + ID +
-                ' ';
+                ", ID = " + ID + "\n";
     }
 }
