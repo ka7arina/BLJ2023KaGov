@@ -18,7 +18,7 @@ void print_data(TNode *head) {
     if(head == NULL) {
         printf("\nLinked List is empty\n");
     }
- 
+
     // ptr contains NULL - contains nothing
     TNode *ptr = NULL;
     // assign head to it, means assigning the node address
