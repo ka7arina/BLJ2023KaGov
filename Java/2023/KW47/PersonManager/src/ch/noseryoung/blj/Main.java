@@ -30,7 +30,8 @@ public class Main {
         while (!exitLoop) {
             System.out.println("What would you like to do?\n" +
                     "Print the Person List: 1\n" +
-                    "Add a new person to the list: 2\n");
+                    "Add a new person to the list: 2\n" +
+                    "Stop the programm: 3\n");
             System.out.println("Enter a Number");
             int number = myObj.nextInt(); // reads the user input as int because it's a number
             switch(number) {
@@ -44,7 +45,9 @@ public class Main {
                     // adds the new person
                     addNewPerson(personenList);
                     break;
-                default: exitLoop = true; // exit the loop if a different option is entered
+                case 3: // if 3 is input
+                    System.out.println("Thank you so much for using the Personen Manager!");
+                    exitLoop = true; // exit the loop if a different option is entered
             }
         }
 
@@ -77,7 +80,7 @@ public class Main {
             Personen newPerson = new Personen(name, age, placeOfBirth, nationality, id);
             personenList.add(newPerson);
 
-            System.out.println("New person added successfully!");
+            System.out.println("New person added successfully!\n");
     }
 
 }
