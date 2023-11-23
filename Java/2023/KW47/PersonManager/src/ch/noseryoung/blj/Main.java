@@ -12,25 +12,42 @@ public class Main {
         Personen Gracie = new Personen("Gracie", 24, "Los Angeles, California", "American", 02);
         Personen Lexi = new Personen("Lexi", 20, "Los Angeles, California", "American", 03);
 
-        // creates a array list -> with an array list you can create functions that add a user input as a new person
+        // creates an array list -> with an array list you can create functions that add a user input as a new person
         ArrayList<Personen> personenList = new ArrayList<>();
         personenList.add(Taylor);
         personenList.add(Gracie);
         personenList.add(Lexi);
 
+        // welcomes the user
+        System.out.println("\n\nWelcome to the Personen Manager!\n");
 
-        // prints out the current person list
-        System.out.println("----------------------------------------------------------------------------------------------------------");
-        System.out.println(personenList.toString());
-        System.out.println("----------------------------------------------------------------------------------------------------------");
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
 
-        // adds the new person
-        addNewPerson(personenList);
+        // exit loop false
+        boolean exitLoop = false;
 
-        // prints out the updated person list
-        System.out.println("----------------------------------------------------------------------------------------------------------");
-        System.out.println(personenList.toString());
-        System.out.println("----------------------------------------------------------------------------------------------------------");
+        // while loop
+        while (!exitLoop) {
+            System.out.println("What would you like to do?\n" +
+                    "Print the Person List: 1\n" +
+                    "Add a new person to the list: 2\n");
+            System.out.println("Enter a Number");
+            int number = myObj.nextInt(); // reads the user input as int because it's a number
+            switch(number) {
+                case 1: // if 1 is input
+                    // prints out the current person list
+                    System.out.println("----------------------------------------------------------------------------------------------------------");
+                    System.out.println(personenList.toString());
+                    System.out.println("----------------------------------------------------------------------------------------------------------");
+                    break;
+                case 2: // if 2 is input
+                    // adds the new person
+                    addNewPerson(personenList);
+                    break;
+                default: exitLoop = true; // exit the loop if a different option is entered
+            }
+        }
+
     }
 
     // creates the add person function
