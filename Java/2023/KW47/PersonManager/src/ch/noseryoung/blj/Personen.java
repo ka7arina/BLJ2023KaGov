@@ -1,6 +1,8 @@
 package ch.noseryoung.blj;
 
 public class Personen {
+
+    // creates the different categories
     private String name;
     private int age;
     private String placeofbirth;
