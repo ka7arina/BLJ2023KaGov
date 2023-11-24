@@ -12,17 +12,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int GarmentSize;
+
         System.out.println("Welcome to the Garment Size Calculator!!\n");
 
         computeGarmentSize();
-
-        System.out.println("This is your Garment Size: " );
 
     }
 
     public static void computeGarmentSize() {
 
-        int GarmentSize;
+        int GarmentSize = 0;
 
         System.out.println("Are you female or male? (M = 1 / F = 2)");
         Scanner scanner = new Scanner(System.in);
@@ -32,12 +32,13 @@ public class Main {
         int chestMeasurement = scanner.nextInt();
 
         switch (gender) {
-            case 1: GarmentSize = (int)chestMeasurement / 2;
+            case 1: GarmentSize = chestMeasurement / 2;
                 break;
-            case 2: GarmentSize = (int)chestMeasurement / 2 - 6;
+            case 2: GarmentSize = chestMeasurement / 2 - 6;
                 break;
-            default: System.out.println("Please Input a Valid number!!!!!!!");
+            default: System.out.println("Error!! Invalid number.");
                 break;
         }
+
     }
 }
