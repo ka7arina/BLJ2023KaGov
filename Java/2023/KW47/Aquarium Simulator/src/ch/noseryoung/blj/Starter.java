@@ -1,5 +1,6 @@
 package ch.noseryoung.blj;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,33 +8,101 @@ public class Starter {
 
     public static void main(String[] args) {
 
-        Fish bob = new Fish("Bob", "Male", "Yellow", "Bluecheek Butterflyfish", 5, true, false, 2, 3);
-        Fish dylan = new Fish("Dylan", "Male", "Golden", "Goldfish", 7, true, false, 4, 7);
-        Fish greg = new Fish("Greg", "Male", "Blue", "Swordfish", 5, true, false, 5, 7);
-        Fish lily = new Fish("Lily", "Female", "Pink", "Pink Tetra", 3, false, true, 5,6);
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        Fish bob = new Fish("Bob", "Male", "Yellow", "Bluecheek Butterflyfish", 5, true, 2, 3);
+        Fish dylan = new Fish("Dylan", "Male", "Golden", "Goldfish", 7, true, 4, 7);
+        Fish greg = new Fish("Greg", "Male", "Blue", "Swordfish", 5, true, 5, 7);
+        Fish lily = new Fish("Lily", "Female", "Pink", "Pink Tetra", 3, false, 5, 6);
+        Decor seagrass = new Decor("Plant",1,3,8);
+        Decor coral = new Decor("Plant", 1, 5,3);
 
         // erstellt ein neues objekt - aquarium - mit width, length und welche art von wasser es ist
-        Aquarium mySaltWaterA = new Aquarium(10, 10, true, false);
-        mySaltWaterA.addFish(bob);
-        mySaltWaterA.addFish(dylan);
+        Aquarium mySaltWaterA = new Aquarium(10, 10, true);
 
-        mySaltWaterA.printAquarium();
+        System.out.println("------------------------------");
+        System.out.println("Welcome to the Aquarium");
+        System.out.println("------------------------------\n");
 
-        mySaltWaterA.moveFish(dylan, 3, 2);
+        // do while loop - do this code while the option IS NOT 4, aka the exit option.
+        do {
 
-        mySaltWaterA.printAquarium();
+        System.out.println("What would you like to do?\n" +
+                "----------------------------\n" +
+                "Add a fish: 1\n" +
+                "Remove a fish: 2\n" +
+                "Print the aquarium: 3\n" +
+                "Add decoration: 4\n" +
+                "Exit: 5\n");
 
-        mySaltWaterA.addFish(greg);
+        option = scanner.nextInt();
 
-        mySaltWaterA.printAquarium();
 
-        mySaltWaterA.removeFish(greg);
+            // switch statement welche option man ausführen will und darin noch ein switch statement für den fish
+            switch (option) {
+                case 1: // add fish
+                    System.out.println("Please choose a fish to add (bob, dylan, greg, lily): ");
+                    String fishname = scanner.next();
+                    switch (fishname) {
+                        case "bob":
+                            mySaltWaterA.addFish(bob);
+                            break;
+                        case "dylan":
+                            mySaltWaterA.addFish(dylan);
+                            break;
+                        case "greg":
+                            mySaltWaterA.addFish(greg);
+                            break;
+                        case "lily":
+                            mySaltWaterA.addFish(lily);
+                            break;
+                    }
+                    break;
+                case 2: // remove a fish
+                    System.out.println("Please choose a fish to remove (bob, dylan, greg, lily): ");
+                    String removefish = scanner.next();
+                    switch (removefish) {
+                        case "bob":
+                            mySaltWaterA.removeFish(bob);
+                        /* if (if aquarium = empty, then you cant remove a fish) {
+                          System.out.println("Error! You cannot remove a fish from an empty aquarium!!!"); */
+                            break;
+                        case "dylan":
+                            mySaltWaterA.removeFish(dylan);
+                            break;
+                        case "greg":
+                            mySaltWaterA.removeFish(greg);
+                            break;
+                        case "lily":
+                            mySaltWaterA.removeFish(lily);
+                            break;
+                    }
+                    break;
+                case 3: // print the aquarium
+                    mySaltWaterA.printAquarium();
+                    break;
+                case 4:
+                    System.out.println("Please choose a decoration to add (seagrass, coral): ");
+                    String decor = scanner.next();
+                    switch(decor) {
+                        case "seagrass":
+                            mySaltWaterA.addDecor(seagrass);
+                                break;
+                        case "coral":
+                            mySaltWaterA.addDecor(coral);
+                                break;
+                    }
+                    break;
+                case 5:
+                    // exit
+                    System.out.println("-----------------------------------------------------------------");
+                    System.out.println("Thank you for using the Aquarium Simulator!!! Until next time <3");
+                    System.out.println("-----------------------------------------------------------------");
+                        break;
+            }
+        } while (option !=5);
 
-        mySaltWaterA.printAquarium();
-
-        mySaltWaterA.addFish(lily);
-
-        mySaltWaterA.printAquarium();
     }
-
 }
+

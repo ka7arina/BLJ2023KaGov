@@ -2,10 +2,10 @@ package ch.noseryoung.blj;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Aquarium {
     boolean isSaltWater;
-    boolean isFreshWater;
 
     // 2d array erstellt
     private int[][] aquarium;
@@ -13,31 +13,37 @@ public class Aquarium {
     // array list erstellt
     private ArrayList<Fish> fishes = new ArrayList<>();
 
+    private ArrayList<Decor> decorations = new ArrayList<>();
+
     public Aquarium() {
 
     }
 
     // constructor
-    public Aquarium(int width, int length, boolean isSaltWater, boolean isFreshWater) {
+    public Aquarium(int width, int length, boolean isSaltWater) {
         this.isSaltWater = isSaltWater;
-        this.isFreshWater = isFreshWater;
         // sagt das dieses aquarium so breit und so lang ist
         this.aquarium = new int[width][length];
     }
 
     // added einen fish in das aquarium -> 1 heisst ja das das wasser mit dem fish symbol replaced wird, deswegen kommt danach eine 1
     public void addFish(Fish newFish) {
-        if (isSaltWater) {
+        // wenn isSaltWater = true
+        if (isSaltWater == newFish.isSaltWater()) {
+            // add the fish like normal
             fishes.add(newFish);
             aquarium[newFish.getyPos()][newFish.getxPos()] = 1;
+            // if isSaltWater is not true (false) then display an error message
+            System.out.println("Your fish " + newFish.getName() + " has been added.");
         } else {
-            System.out.println("Error! You cannot add a freshwater fish into a saltwater aquarium");
+            System.out.println("Error! You cannot add a freshwater fish (" + newFish.getName() + ") into a saltwater aquarium");
         }
     }
 
     // entferne einen fish vom aquarium function - 0 weil 0 heisst das irgendetwas das darin steht mit dem water replaced wird
     public void removeFish(Fish newFish) {
         fishes.remove(newFish);
+        System.out.println("Your fish " + newFish.getName() + " has been removed.");
         aquarium[newFish.getyPos()][newFish.getxPos()] = 0;
     }
 
@@ -71,6 +77,18 @@ public class Aquarium {
         return index;
     }
 
+    public void addDecor(Decor newDecor) {
+            decorations.add(newDecor);
+            aquarium[newDecor.getyPos()][newDecor.getxPos()] = 2;
+            System.out.println("Your decor " + newDecor.getType() + " has been added.");
+    }
+
+    public void removeDecor(Decor newDecor) {
+        decorations.remove(newDecor);
+        System.out.println("Your decor " + newDecor.getType() + " has been removed.");
+        aquarium[newDecor.getyPos()][newDecor.getxPos()] = 0;
+    }
+
     // print aquarium funktion
     public void printAquarium() {
         for (int i = 0; i < aquarium.length; i++) {
@@ -79,7 +97,7 @@ public class Aquarium {
         System.out.println("▓");
         String aquariumAsString = Arrays.deepToString(aquarium);
         aquariumAsString = aquariumAsString.replace("[[", "▓").replace("], [", "▓\n▓").replace(", ", " ").replace("]]",
-                "▓").replace("0", "~").replace("1", "\uD80C\uDD9F");
+                "▓").replace("0", "~").replace("1", "\uD80C\uDDFC").replace("2","✪");
         System.out.println(aquariumAsString);
 
         for (int i = 0; i < aquarium.length; i++) {

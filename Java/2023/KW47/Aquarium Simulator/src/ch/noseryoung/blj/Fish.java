@@ -6,23 +6,21 @@ public class Fish {
     private String color;
     private String type;
     private int size;
-    boolean isSaltWater;
-    boolean isFreshWater;
-    int xPos;
-    int yPos;
+    private boolean isSaltWater;
+    private int xPos;
+    private int yPos;
 
     public Fish() {
 
     }
 
-    public Fish(String name, String gender, String color, String type, int size, boolean isSaltWater, boolean isFreshWater, int xPos, int yPos) {
+    public Fish(String name, String gender, String color, String type, int size, boolean isSaltWater, int xPos, int yPos) {
         this.name = name;
         this.gender = gender;
         this.color = color;
         this.type = type;
         this.size = size;
         this.isSaltWater = isSaltWater;
-        this.isFreshWater = isFreshWater;
         this.xPos = xPos;
         this.yPos = yPos;
     }
@@ -77,13 +75,6 @@ public class Fish {
         isSaltWater = saltWater;
     }
 
-    public boolean isFreshWater() {
-        return isFreshWater;
-    }
-
-    public void setFreshWater(boolean freshWater) {
-        isFreshWater = freshWater;
-    }
 
     public int getxPos() {
         return xPos;
@@ -104,6 +95,6 @@ public class Fish {
     // vorlage für den output
     public String toString() {
         return this.name + " , " + this.gender + " , " + this.color + " , " + this.type + " , " +
-                this.size + " , " + this.isSaltWater + " , " + this.isFreshWater;
+                this.size + " , " + this.isSaltWater ;
     }
 }
