@@ -1,7 +1,5 @@
 package ch.noseryoung.blj;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Starter {
@@ -15,8 +13,8 @@ public class Starter {
         Fish dylan = new Fish("Dylan", "Male", "Golden", "Goldfish", 7, true, 4, 7);
         Fish greg = new Fish("Greg", "Male", "Blue", "Swordfish", 5, true, 5, 7);
         Fish lily = new Fish("Lily", "Female", "Pink", "Pink Tetra", 3, false, 5, 6);
-        Decor seagrass = new Decor("Plant",1,3,8);
-        Decor coral = new Decor("Plant", 1, 5,3);
+        Decor seagrass = new Decor();
+        Decor coral = new Decor();
 
         // erstellt ein neues objekt - aquarium - mit width, length und welche art von wasser es ist
         Aquarium mySaltWaterA = new Aquarium(10, 10, true);
@@ -34,7 +32,8 @@ public class Starter {
                 "Remove a fish: 2\n" +
                 "Print the aquarium: 3\n" +
                 "Add decoration: 4\n" +
-                "Exit: 5\n");
+                "Move a fish: 5\n" +
+                "Exit: 6\n");
 
         option = scanner.nextInt();
 
@@ -85,23 +84,53 @@ public class Starter {
                 case 4:
                     System.out.println("Please choose a decoration to add (seagrass, coral): ");
                     String decor = scanner.next();
+                    System.out.println("Where would you like to add it?" +
+                            "x Position: ");
+                    int x = scanner.nextInt();
+                    System.out.println("y Position: ");
+                    int y = scanner.nextInt();;
                     switch(decor) {
                         case "seagrass":
-                            mySaltWaterA.addDecor(seagrass);
+                            mySaltWaterA.addDecor(seagrass, x, y);
                                 break;
                         case "coral":
-                            mySaltWaterA.addDecor(coral);
+                            mySaltWaterA.addDecor(coral, x, y);
                                 break;
                     }
                     break;
-                case 5:
+                case 5: // move fish
+                    System.out.println("Which fish would you like to move?");
+                    String move = scanner.next();
+                    System.out.println("Where would you like to move the fish?\n" +
+                            "x Position: ");
+                    int x = scanner.nextInt();
+                    System.out.println("y Position: ");
+                    int y = scanner.nextInt();
+                    switch(move) {
+                        case "bob":
+                            mySaltWaterA.moveFish(bob, x, y);
+                            break;
+                        case "dylan":
+                            mySaltWaterA.moveFish(dylan, x, y);
+                            break;
+                        case "greg":
+                            mySaltWaterA.moveFish(greg, x, y);
+                            break;
+                        case "lily":
+                            mySaltWaterA.moveFish(lily, x, y);
+                            break;
+                    }
+                case 6:
                     // exit
                     System.out.println("-----------------------------------------------------------------");
                     System.out.println("Thank you for using the Aquarium Simulator!!! Until next time <3");
                     System.out.println("-----------------------------------------------------------------");
                         break;
+                case 10:
+                    System.out.println("SHHHH! You found the secret 7th option!\n\n\n" +
+                            "Now go back to the ACTUAL options xx\n\n");
             }
-        } while (option !=5);
+        } while (option !=6);
 
     }
 }

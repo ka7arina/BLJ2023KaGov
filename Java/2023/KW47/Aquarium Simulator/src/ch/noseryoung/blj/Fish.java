@@ -26,6 +26,7 @@ public class Fish {
     }
 
 
+
     // getters und setters generiert
     public String getName() {
         return name;

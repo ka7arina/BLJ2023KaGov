@@ -59,6 +59,7 @@ public class Aquarium {
         fishes.get(index).setyPos(y);
         // gets the new positions of the fish and places it there
         aquarium[newFish.getyPos()][newFish.getxPos()] = 1;
+        System.out.println("Your fish" + newFish.getName() + "has been moved.");
     }
 
     public int findIndexOfFish(Fish fish) {
@@ -77,7 +78,7 @@ public class Aquarium {
         return index;
     }
 
-    public void addDecor(Decor newDecor) {
+    public void addDecor(Decor newDecor, int x, int y) {
             decorations.add(newDecor);
             aquarium[newDecor.getyPos()][newDecor.getxPos()] = 2;
             System.out.println("Your decor " + newDecor.getType() + " has been added.");
@@ -97,7 +98,7 @@ public class Aquarium {
         System.out.println("▓");
         String aquariumAsString = Arrays.deepToString(aquarium);
         aquariumAsString = aquariumAsString.replace("[[", "▓").replace("], [", "▓\n▓").replace(", ", " ").replace("]]",
-                "▓").replace("0", "~").replace("1", "\uD80C\uDDFC").replace("2","✪");
+                "▓").replace("0", "~").replace("1", "\uD83D\uDC1F").replace("2","\uD83E\uDEB8");
         System.out.println(aquariumAsString);
 
         for (int i = 0; i < aquarium.length; i++) {
