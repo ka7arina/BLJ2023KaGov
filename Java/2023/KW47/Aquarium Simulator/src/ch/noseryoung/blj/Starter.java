@@ -13,17 +13,18 @@ public class Starter {
         Fish dylan = new Fish("Dylan", "Male", "Golden", "Goldfish", 7, true, 4, 7);
         Fish greg = new Fish("Greg", "Male", "Blue", "Swordfish", 5, true, 5, 7);
         Fish lily = new Fish("Lily", "Female", "Pink", "Pink Tetra", 3, false, 5, 6);
-        Decor seagrass = new Decor();
-        Decor coral = new Decor();
+        Decor seagrass = new Decor("Seagrass",3, 0, 0);
+        Decor coral = new Decor("Coral",3, 0, 0);
 
         // erstellt ein neues objekt - aquarium - mit width, length und welche art von wasser es ist
         Aquarium mySaltWaterA = new Aquarium(10, 10, true);
+        mySaltWaterA.addFish(bob);
 
         System.out.println("------------------------------");
         System.out.println("Welcome to the Aquarium");
         System.out.println("------------------------------\n");
 
-        // do while loop - do this code while the option IS NOT 4, aka the exit option.
+        // do while loop - do this code while the option IS NOT 6, aka the exit option.
         do {
 
         System.out.println("What would you like to do?\n" +
@@ -81,20 +82,20 @@ public class Starter {
                 case 3: // print the aquarium
                     mySaltWaterA.printAquarium();
                     break;
-                case 4:
+                case 4: // add decor
                     System.out.println("Please choose a decoration to add (seagrass, coral): ");
                     String decor = scanner.next();
-                    System.out.println("Where would you like to add it?" +
-                            "x Position: ");
-                    int x = scanner.nextInt();
-                    System.out.println("y Position: ");
-                    int y = scanner.nextInt();;
+                    System.out.println("Where would you like to add it?\n" +
+                            " x Position: ");
+                    int x = scanner.nextInt(); // scans the user location input for x Position
+                    System.out.println(" y Position: ");
+                    int y = scanner.nextInt(); // scans the user location input for x Position
                     switch(decor) {
                         case "seagrass":
-                            mySaltWaterA.addDecor(seagrass, x, y);
+                            mySaltWaterA.addDecor(new Decor("seagrass", 4, x, y)); // adds the seagrass decor
                                 break;
                         case "coral":
-                            mySaltWaterA.addDecor(coral, x, y);
+                            mySaltWaterA.addDecor(new Decor("coral", 3, x, y)); // adds the coral decor
                                 break;
                     }
                     break;
@@ -103,32 +104,35 @@ public class Starter {
                     String move = scanner.next();
                     System.out.println("Where would you like to move the fish?\n" +
                             "x Position: ");
-                    int x = scanner.nextInt();
+                    int xPos = scanner.nextInt();
                     System.out.println("y Position: ");
-                    int y = scanner.nextInt();
+                    int yPos = scanner.nextInt();
                     switch(move) {
                         case "bob":
-                            mySaltWaterA.moveFish(bob, x, y);
+                            mySaltWaterA.moveFish(bob, xPos, yPos);
                             break;
                         case "dylan":
-                            mySaltWaterA.moveFish(dylan, x, y);
+                            mySaltWaterA.moveFish(dylan, xPos, yPos);
                             break;
                         case "greg":
-                            mySaltWaterA.moveFish(greg, x, y);
+                            mySaltWaterA.moveFish(greg, xPos, yPos);
                             break;
                         case "lily":
-                            mySaltWaterA.moveFish(lily, x, y);
+                            mySaltWaterA.moveFish(lily, xPos, yPos);
                             break;
                     }
+                    break;
                 case 6:
-                    // exit
+                    // exit, prints out an exit message and ends the program
                     System.out.println("-----------------------------------------------------------------");
                     System.out.println("Thank you for using the Aquarium Simulator!!! Until next time <3");
                     System.out.println("-----------------------------------------------------------------");
                         break;
-                case 10:
+                case 10: // random secret case that shows up if someone accidentally choose the case number
                     System.out.println("SHHHH! You found the secret 7th option!\n\n\n" +
                             "Now go back to the ACTUAL options xx\n\n");
+                default:
+                    System.out.println("Error! This case doesn't exist!");
             }
         } while (option !=6);
 

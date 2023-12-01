@@ -12,7 +12,6 @@ public class Aquarium {
 
     // array list erstellt
     private ArrayList<Fish> fishes = new ArrayList<>();
-
     private ArrayList<Decor> decorations = new ArrayList<>();
 
     public Aquarium() {
@@ -59,7 +58,7 @@ public class Aquarium {
         fishes.get(index).setyPos(y);
         // gets the new positions of the fish and places it there
         aquarium[newFish.getyPos()][newFish.getxPos()] = 1;
-        System.out.println("Your fish" + newFish.getName() + "has been moved.");
+        System.out.println("Your fish " + newFish.getName() + " has been moved.");
     }
 
     public int findIndexOfFish(Fish fish) {
@@ -78,9 +77,9 @@ public class Aquarium {
         return index;
     }
 
-    public void addDecor(Decor newDecor, int x, int y) {
+    public void addDecor(Decor newDecor) {
             decorations.add(newDecor);
-            aquarium[newDecor.getyPos()][newDecor.getxPos()] = 2;
+                aquarium[newDecor.getyPos()][newDecor.getxPos()] = 2;
             System.out.println("Your decor " + newDecor.getType() + " has been added.");
     }
 
