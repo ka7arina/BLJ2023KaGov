@@ -43,9 +43,44 @@
     background-color: #ddd;
     color: black;
   }
+
+  .container {
+    display: flex;
+  }
   
   img.left-image {
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
+    margin-top: 30px;
     margin-left: 20px;
   }
+
+  .text-right {
+    max-width: 40%;
+    height: auto;
+    margin-top: 450px;
+    margin-left: 400px;
+  }
+
+  h4 {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 60px;
+  }
+
+  .subtitle {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 20px;
+    margin-left: 370px; 
+  }
+
+.text-container {
+  max-width: 40%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
