@@ -1,1 +1,0 @@
-# blj-receipt-page-katarina-govedarica

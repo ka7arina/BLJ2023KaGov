@@ -128,7 +128,7 @@ public class Starter {
                     System.out.println("Thank you for using the Aquarium Simulator!!! Until next time <3");
                     System.out.println("-----------------------------------------------------------------");
                         break;
-                case 10: // random secret case that shows up if someone accidentally choose the case number
+                case 10: // random secret case that shows up if someone accidentally chooses the case number
                     System.out.println("SHHHH! You found the secret 7th option!\n\n\n" +
                             "Now go back to the ACTUAL options xx\n\n");
                 default:

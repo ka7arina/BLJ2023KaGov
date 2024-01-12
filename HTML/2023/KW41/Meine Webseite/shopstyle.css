@@ -8,7 +8,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-family: 'Work Sans', sans-serif;
 
-    background-image: linear-gradient(rgba(19, 30, 70, 0.669), rgba(202, 157, 189, 0.705)),url('shop.jpg');
+    background-image: linear-gradient(rgba(19, 30, 70, 0.669), rgba(202, 157, 189, 0.356)),url('shop.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
@@ -56,3 +56,32 @@ nav img {
 .nav-links ul li:hover::after {
     width: 100%;
 }
+
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.product {
+   box-shadow: 7px 7px 7px rgba(1, 1, 1, 0.1);
+   max-width: 100%;
+}
+
+.main_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    width: 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
+
+.product img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    
+}
+
