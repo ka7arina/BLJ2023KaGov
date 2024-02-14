@@ -107,7 +107,7 @@ public class boss {
 
                     int rowsAffected;
                     rowsAffected = pstmt.executeUpdate();
-                    System.out.println(rowsAffected + " row(s) inserted successfully.");
+                    System.out.println(rowsAffected + "product successfully added");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

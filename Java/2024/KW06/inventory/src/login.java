@@ -21,18 +21,13 @@ public class login {
                 System.out.println("Authentication failed. Invalid role or password.");
             }
 
-            if (role.equals("boss") && (password.equals("!30DBrootPW48"))) {
+            if (role.equals("boss") && (password.equals("boss!"))) {
                 boss.boss();
-
-
             }
 
 
             if (role.equals("customer") && (password.equals("customer"))) {
                 customer.customer();
-
-
-
             }
             scanner.close();
 
