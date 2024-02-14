@@ -372,10 +372,16 @@ public class boss {
 
                     pstmt.setInt(1, id);
 
+                    System.out.println("Reordering");
+                    Loading.loadingAnimationWithTimer(10000);
+
                     System.out.println("Would you like to restock?");
                     String restockinput = scanner.nextLine();
 
                     if(restockinput.equals("yes")) {
+
+                        System.out.println("Restocking");
+                        Loading.loadingAnimationWithTimer(5000);
                         int rowsUpdated = pstmt.executeUpdate();
 
                         // Überprüfen Sie, ob das Update erfolgreich war
