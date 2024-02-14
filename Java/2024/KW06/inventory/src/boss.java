@@ -358,30 +358,34 @@ public class boss {
                 System.out.println("-------------------------------------------------------------------\n");
             }
 
-            if (userinput.contains("change desc")) {
-                var sql = "UPDATE inventory.products SET description = ? WHERE product_id = ?";
+            if (userinput.contains("reorder")) {
+
+                var sql = "UPDATE inventory.products SET quantity_available = 100 WHERE product_id = ?;";
 
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Update the description:");
-                    String newdesc = scanner.nextLine();
-
-                    System.out.println("Id of the product you want to change the description of:");
+                    System.out.println("Which product would you like to reorder?:");
                     int id = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
 
 
-                    pstmt.setString(1, newdesc);
-                    pstmt.setInt(2, id);
+                    pstmt.setInt(1, id);
 
+                    System.out.println("Would you like to restock?");
+                    String restockinput = scanner.nextLine();
 
-                    int rowsUpdated = pstmt.executeUpdate();
+                    if(restockinput.equals("yes")) {
+                        int rowsUpdated = pstmt.executeUpdate();
 
-                    // Überprüfen Sie, ob das Update erfolgreich war
-                    if (rowsUpdated > 0) {
-                        System.out.println("Updated description successfully");
+                        // Überprüfen Sie, ob das Update erfolgreich war
+                        if (rowsUpdated > 0) {
+                            System.out.println("Restocked!");
+                        } else {
+                            System.out.println("Failed to restocked");
+                        }
                     } else {
-                        System.out.println("Failed to update description");
+                        System.out.println("You can manually restock it the next time!");
                     }
 
                 } catch (SQLException e) {
