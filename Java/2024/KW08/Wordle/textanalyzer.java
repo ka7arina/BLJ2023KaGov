@@ -20,15 +20,29 @@ public class textanalyzer {
 
         Scanner scanner = new Scanner(System.in);
 
+
         System.out.println("---- Welcome to Wordle ----");
 
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
             if (attempts < MAX_ATTEMPTS - 1) {
                 System.out.println("     Input your guess:");
                 String userinput = scanner.nextLine();
+
+                StringBuilder hint = new StringBuilder();
+                char guessedChar = userinput.charAt(attempts);
+                char secretChar = randomWord.charAt(attempts);
+
+                if (guessedChar == secretChar) {
+                    hint.append("●"); // correct letter correct position
+                } else if (randomWord.contains(String.valueOf(guessedChar))) {
+                    hint.append("○"); // correct letter, wrong position
+                } else {
+                    hint.append("◌"); // incorrect letter
+                }
             } else {
-                System.out.println("You are out of guesses! The word was '" + randomWord + "'");
+                System.out.println("You are out of guesses! The word was " + randomWord);
             }
+
         }
     }
 
@@ -57,4 +71,5 @@ public class textanalyzer {
         return wordList.get(randomIndex);
     }
 }
+
 
