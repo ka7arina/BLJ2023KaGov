@@ -39,7 +39,7 @@ public class boss {
         while (on) {
             String userinput = scanner.nextLine();
 
-            if (userinput.equals("inventory")) {
+            if (userinput.contains("inv")) {
                 var sql = "SELECT * " +
                         "FROM inventory.products ORDER BY product_id; ";
 
@@ -124,7 +124,7 @@ public class boss {
                     System.out.println("Please input the id of the product you want to update the stock for");
                     int stockid = scanner.nextInt();
 
-                    System.out.println("Update the quantity available:");
+                    System.out.println("Input the updated quantity available:");
                     int quantity = scanner.nextInt();
 
 
@@ -134,7 +134,7 @@ public class boss {
 
                     int rowsUpdated = pstmt.executeUpdate();
 
-                    // Überprüfen Sie, ob das Update erfolgreich war
+                    // überprüft ob das Update erfolgreich war
                     if (rowsUpdated > 0) {
                         System.out.println("Stock updated successfully.");
                     } else {
@@ -185,7 +185,7 @@ public class boss {
                     System.out.println("Which id do you wish to change?");
                     int productid = scanner.nextInt();
 
-                    System.out.println("Update the id:");
+                    System.out.println("Please input the updated id:");
                     int oldid = scanner.nextInt();
 
 
@@ -215,10 +215,10 @@ public class boss {
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Update the name:");
+                    System.out.println("Input your updated name:");
                     String prodname = scanner.nextLine();
 
-                    System.out.println("Id of the product you want to rename:");
+                    System.out.println("Please input the id of the product you want to rename:");
                     int id = scanner.nextInt();
 
 
@@ -246,10 +246,10 @@ public class boss {
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Id of the product you want to change the price of:");
+                    System.out.println("Please input the id of the product you want to change the price of:");
                     int id = scanner.nextInt();
 
-                    System.out.println("Update the price:");
+                    System.out.println("Input your updated price:");
                     BigDecimal newprice = scanner.nextBigDecimal();
 
                     pstmt.setBigDecimal(1, newprice);
@@ -276,7 +276,7 @@ public class boss {
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Update the category:");
+                    System.out.println("Input your updated category:");
                     String newcat = scanner.nextLine();
 
                     System.out.println("Id of the product you want to change the category of:");
@@ -307,10 +307,10 @@ public class boss {
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Update the description:");
+                    System.out.println("Input your updated description");
                     String newdesc = scanner.nextLine();
 
-                    System.out.println("Id of the product you want to change the description of:");
+                    System.out.println("Please input the id of the product you want to change the description of:");
                     int id = scanner.nextInt();
 
 
@@ -346,7 +346,7 @@ public class boss {
                         "                                      |_|                                \n\n");
                 System.out.println("Commands:\n");
                 System.out.println("-------------------------------------------------------------------\n");
-                System.out.println("\033[0;1m'inventory'\033[0;0m -> Shows the stores current inventory\n");
+                System.out.println("\033[0;1m'inventory/inv'\033[0;0m -> Shows the stores current inventory\n");
                 System.out.println("\033[0;1m'add new product'\033[0;0m -> Adds a new product to the inventory\n");
                 System.out.println("\033[0;1m'remove product'\033[0;0m -> Removes a product from the inventory\n");
                 System.out.println("\033[0;1m'update stock'\033[0;0m -> Updates the stock of an item\n");
@@ -355,6 +355,7 @@ public class boss {
                 System.out.println("\033[0;1m'change price'\033[0;0m -> Changes the price of a product\n");
                 System.out.println("\033[0;1m'change category'\033[0;0m -> Changes the category of a product\n");
                 System.out.println("\033[0;1m'change desc'\033[0;0m -> Changes the description of a product\n");
+                System.out.println("\033[0;1m'reorder'\033[0;0m -> Reorder items from the warehouse and restock them (includes cool animation)\n");
                 System.out.println("-------------------------------------------------------------------\n");
             }
 
@@ -365,7 +366,7 @@ public class boss {
                 try (var conn = DB.connect();
                      var pstmt = conn.prepareStatement(sql)) {
 
-                    System.out.println("Which product would you like to reorder?:");
+                    System.out.println("Please input the id of the product you would like to reorder:");
                     int id = scanner.nextInt();
                     scanner.nextLine(); // Consume newline character
 
@@ -375,7 +376,7 @@ public class boss {
                     System.out.println("Reordering");
                     Loading.loadingAnimationWithTimer(10000);
 
-                    System.out.println("Would you like to restock?");
+                    System.out.println("Would you like to restock? (yes/no");
                     String restockinput = scanner.nextLine();
 
                     if(restockinput.equals("yes")) {
@@ -397,6 +398,11 @@ public class boss {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+            }
+
+            if(userinput.equals("logout")) {
+                System.out.println("Bye boss!");
+                login.login();
             }
         }
     }

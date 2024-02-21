@@ -1,19 +1,10 @@
-
-import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 
 public class ProductDB {
 
     public static void showproducts() {
         var sql = "SELECT product_id, name, price " +
-                "FROM inventory.products ";
+                "FROM inventory.products ORDER BY product_id;";
 
         try (var conn = DB.connect();
              var stmt = conn.createStatement()) {
@@ -47,27 +38,6 @@ public class ProductDB {
         }
 
         return price;
-    }
-
-
-    public static int update(int add, int id) {
-        var sql = "UPDATE inventory.products " +
-                "SET quantity_available = quantity_available + ? " +
-                "WHERE product_id = ?";
-
-        int affectedRows = 0;
-
-        try (var conn = DB.connect();
-             var pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, add);
-            pstmt.setInt(2, id);
-            affectedRows = pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return affectedRows;
     }
 
     public static int checkstock(int productId) {

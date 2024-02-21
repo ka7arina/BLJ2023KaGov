@@ -17,20 +17,20 @@ public class login {
             if (AuthenticationLogic.authenticate(role, password)) {
                 welcome.welcomeMessage(role);
                 login = false;
+
+                if (role.equals("boss") && password.equals("boss!")) {
+                    boss.boss();
+                } else if (role.equals("customer") && password.equals("customer")) {
+                    customer.customer();
+                } else {
+                    System.out.println("Invalid role or password for the given role.");
+                }
             } else {
                 System.out.println("Authentication failed. Invalid role or password.");
             }
-
-            if (role.equals("boss") && (password.equals("boss!"))) {
-                boss.boss();
-            }
-
-
-            if (role.equals("customer") && (password.equals("customer"))) {
-                customer.customer();
-            }
-            scanner.close();
-
         }
+        scanner.close();
+
+
     }
-}
+    }

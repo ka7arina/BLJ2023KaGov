@@ -1,4 +1,3 @@
-import java.sql.SQLException;
 import java.util.Scanner;
 public class customer {
 
@@ -44,7 +43,6 @@ public class customer {
                         System.out.println("Shut up.");
                     }
                 }
-
 
                 if (userinput.equals("check out")) {
 
@@ -125,7 +123,8 @@ public class customer {
                     System.out.println("\033[0;1m'show products'\033[0;0m -> Shows all available products and their price");
                     System.out.println("\033[0;1m'add'\033[0;0m and after it asks you which id: "
                             + "\033[0;1m'[product id]'\033[0;0m" + " -> Add items to your cart");
-                    System.out.println("\033[0;1m'check out'\033[0;0m -> Buy/pay the products currently in your cart\n");
+                    System.out.println("\033[0;1m'check out'\033[0;0m -> Buy/pay the products currently in your cart");
+                    System.out.println("\033[0;1m'remove'\033[0;0m -> Remove a product from your cart\n");
                     System.out.println("-------------------------------------------------------------------\n");
                 }
 
