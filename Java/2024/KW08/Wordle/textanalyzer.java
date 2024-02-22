@@ -86,7 +86,6 @@ public class textanalyzer {
                 System.out.println(hint.toString());
                 } else {
                     System.out.println("Input a valid word.");
-                    attempts = -1;
                 }
             } else {
                 System.out.println("You are out of guesses! The word was " + randomWord);
