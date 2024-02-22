@@ -1,12 +1,19 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class achievements {
     public static void mechanic() throws IOException {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDateTime now = LocalDateTime.now();
+
         String[][] achievement = {
-                {"Man", "Sparkes", "msparkes0@springhow.com", "Engineering"}
+                {(dtf.format(now))/* the word, *//* the word, *//* the word, */ /* attempts, */ /* time to guess */ }
         };
+
 
         File csvFile = new File("C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/achievements.csv");
         FileWriter fileWriter = new FileWriter(csvFile);
