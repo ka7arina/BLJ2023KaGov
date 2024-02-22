@@ -43,7 +43,7 @@ public class textanalyzer {
 
                 StringBuilder hint = new StringBuilder();
 
-                if (userinput.length() > 5) {
+                if (userinput.length() > 5 || userinput.length() < 5) {
                     System.out.println("You can only input 5 letter words!");
                     attempts = -1;
                 } else
