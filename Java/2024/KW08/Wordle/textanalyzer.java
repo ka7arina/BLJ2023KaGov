@@ -3,9 +3,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class textanalyzer {
 
@@ -15,22 +12,9 @@ public class textanalyzer {
     private static final String RESET = "\u001B[0;0m";
 
 
-    private static boolean wordValidation(String word, String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.trim().equalsIgnoreCase(word)) {
-                    return true;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
     public static void wordleMechanic() {
-        String fileName = "C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/usa2.txt";
+        String fileName = "C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/wordlist.txt";
         ArrayList<String> wordList = readWordList(fileName); // Populate wordList
         String randomWord = getRandomWord(wordList);
 
@@ -52,8 +36,7 @@ public class textanalyzer {
             if (attempts < MAX_ATTEMPTS - 1) {
                 System.out.println("     Input your guess:");
                 System.out.println("You have " + (MAX_ATTEMPTS-attempts) + " guess(es) left.");
-                String userinput = scanner.nextLine().trim();
-
+                String userinput = scanner.nextLine();
 
                 userinput = userinput.toLowerCase();
 
@@ -62,9 +45,9 @@ public class textanalyzer {
                 if (userinput.length() > 5 || userinput.length() < 5) {
                     System.out.println("You can only input 5 letter words!");
                     attempts = -1;
-                }
+                } else
 
-                if (wordValidation(userinput, fileName)) {
+
 
                     for (int i = 0; i < userinput.length(); i++) {
 
@@ -84,9 +67,6 @@ public class textanalyzer {
                     }
                 }
                 System.out.println(hint.toString());
-                } else {
-                    System.out.println("Input a valid word.");
-                }
             } else {
                 System.out.println("You are out of guesses! The word was " + randomWord);
             }
