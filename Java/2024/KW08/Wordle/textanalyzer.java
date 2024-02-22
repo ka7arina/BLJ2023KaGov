@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ public class textanalyzer {
     private static final String RESET = "\u001B[0;0m";
 
 
-    public static void wordleMechanic() {
+    public static void wordleMechanic() throws IOException {
         String fileName = "C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/wordlist.txt";
         ArrayList<String> wordList = filereader.readWordList(fileName);
         String randomWord = filereader.getRandomWord(wordList);
@@ -73,7 +74,7 @@ public class textanalyzer {
                 System.out.println("You are out of guesses! The word was " + randomWord);
             }
 
-        }
+        } achievements.mechanic();
     }
 }
 

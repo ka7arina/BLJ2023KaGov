@@ -3,16 +3,22 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class filereader {
 
     public static ArrayList<String> readWordList(String fileName) {
+
+
         ArrayList<String> wordList = new ArrayList<>();
         File file = new File(fileName);
 
         try (Scanner scanner = new Scanner(file)) {
+
+
             while (scanner.hasNextLine()) {
                 String word = scanner.nextLine().trim();
+
                 if (!word.isEmpty()) {
                     wordList.add(word);
                 }
@@ -21,6 +27,7 @@ public class filereader {
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         }
+
 
         return wordList;
     }
