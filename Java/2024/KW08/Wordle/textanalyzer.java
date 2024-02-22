@@ -1,23 +1,21 @@
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class textanalyzer {
 
+    // create constants
     private static final int MAX_ATTEMPTS = 6;
     private static final String GREEN = "\u001B[0;32m";
     private static final String YELLOW = "\u001B[0;33m";
     private static final String RESET = "\u001B[0;0m";
 
 
-
     public static void wordleMechanic() {
         String fileName = "C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/wordlist.txt";
-        ArrayList<String> wordList = readWordList(fileName); // Populate wordList
-        String randomWord = getRandomWord(wordList);
+        ArrayList<String> wordList = filereader.readWordList(fileName);
+        String randomWord = filereader.getRandomWord(wordList);
 
+        // makes all the words lowercase
         randomWord = randomWord.toLowerCase();
 
         if (wordList.isEmpty()) {
@@ -31,31 +29,35 @@ public class textanalyzer {
         System.out.println("---- Welcome to Wordle ----");
 
 
-
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
             if (attempts < MAX_ATTEMPTS - 1) {
-                System.out.println("     Input your guess:");
-                System.out.println("You have " + (MAX_ATTEMPTS-attempts) + " guess(es) left.");
-                String userinput = scanner.nextLine();
 
-                userinput = userinput.toLowerCase();
+
+                String userinput;
 
                 StringBuilder hint = new StringBuilder();
 
-                if (userinput.length() > 5 || userinput.length() < 5) {
-                    System.out.println("You can only input 5 letter words!");
-                    attempts = -1;
-                } else
+                while (true) {
+                    System.out.println("     Input your guess:");
+                    System.out.println("You have " + (MAX_ATTEMPTS - attempts) + " guess(es) left.");
+                    userinput = scanner.nextLine();
+                    if (userinput.length() != 5) {
+                        System.out.println("You can only input 5 letter words!");
+                    } else {
+                        break;
+                    }
+
+                }
+                userinput = userinput.toLowerCase();
 
 
-
-                    for (int i = 0; i < userinput.length(); i++) {
+                for (int i = 0; i < userinput.length(); i++) {
 
 
                     char guessedChar = userinput.charAt(i);
                     char secretChar = randomWord.charAt(i);
 
-                   if (userinput.equals(randomWord)) {
+                    if (userinput.equals(randomWord)) {
                         System.out.println("Congrats! You won!");
                         i = 0;
                     } else if (guessedChar == secretChar) {
@@ -73,32 +75,7 @@ public class textanalyzer {
 
         }
     }
-
-    private static ArrayList<String> readWordList(String fileName) {
-        ArrayList<String> wordList = new ArrayList<>();
-        File file = new File(fileName);
-
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String word = scanner.nextLine().trim();
-                if (!word.isEmpty()) {
-                    wordList.add(word);
-                }
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        }
-
-        return wordList;
-    }
-
-    private static String getRandomWord(ArrayList<String> wordList) {
-        Random rand = new Random();
-        int randomIndex = rand.nextInt(wordList.size());
-        return wordList.get(randomIndex);
-    }
-
 }
+
 
 
