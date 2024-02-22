@@ -30,23 +30,33 @@ public class textanalyzer {
 
         System.out.println("---- Welcome to Wordle ----");
 
+
+
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
             if (attempts < MAX_ATTEMPTS - 1) {
                 System.out.println("     Input your guess:");
                 System.out.println("You have " + (MAX_ATTEMPTS-attempts) + " guess(es) left.");
                 String userinput = scanner.nextLine();
 
+
                 userinput = userinput.toLowerCase();
 
                 StringBuilder hint = new StringBuilder();
 
-                for (int i = 0; i < userinput.length(); i++) {
+                if (userinput.length() > 5) {
+                    System.out.println("You can only input 5 letter words!");
+                    attempts = -1;
+                } else
+
+
+
+                    for (int i = 0; i < userinput.length(); i++) {
 
 
                     char guessedChar = userinput.charAt(i);
                     char secretChar = randomWord.charAt(i);
 
-                    if (userinput.equals(randomWord)) {
+                   if (userinput.equals(randomWord)) {
                         System.out.println("Congrats! You won!");
                         i = 0;
                     } else if (guessedChar == secretChar) {
