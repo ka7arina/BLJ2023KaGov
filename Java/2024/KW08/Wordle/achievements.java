@@ -11,12 +11,18 @@ public class achievements {
         LocalDateTime now = LocalDateTime.now();
 
         String[][] achievement = {
-                {(dtf.format(now))/* the word, *//* the word, *//* the word, */ /* attempts, */ /* time to guess */ }
+                {dtf.format(now)}
         };
 
-
         File csvFile = new File("C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/achievements.csv");
-        FileWriter fileWriter = new FileWriter(csvFile);
+
+        boolean isNewFile = !csvFile.exists() || csvFile.length() == 0;
+        FileWriter fileWriter = new FileWriter(csvFile, true);
+
+        // Write headers if file is new or empty
+        if (isNewFile) {
+            fileWriter.append("Date,Word,Attempts,TimeInSeconds\n");
+        }
 
         for (String[] data : achievement) {
             StringBuilder line = new StringBuilder();
