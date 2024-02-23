@@ -29,9 +29,12 @@ public class textanalyzer {
 
         System.out.println("---- Welcome to Wordle ----");
 
+        long beginTime = System.currentTimeMillis();
+
+
 
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
-            if (attempts < MAX_ATTEMPTS - 1) {
+            if (attempts < MAX_ATTEMPTS) {
 
 
                 String userinput;
@@ -60,7 +63,7 @@ public class textanalyzer {
 
                     if (userinput.equals(randomWord)) {
                         System.out.println("Congrats! You won!");
-                        i = 0;
+                        break;
                     } else if (guessedChar == secretChar) {
                         hint.append(GREEN + guessedChar + RESET); // correct letter correct position
                     } else if (randomWord.contains(String.valueOf(guessedChar))) {
@@ -70,11 +73,14 @@ public class textanalyzer {
                     }
                 }
                 System.out.println(hint.toString());
-            } else {
-                System.out.println("You are out of guesses! The word was " + randomWord);
             }
 
-        } achievements.mechanic();
+        } System.out.println("You are out of guesses! The word was " + randomWord);
+        achievements.mechanic();
+
+        long endTime = System.currentTimeMillis();
+        long difference = endTime - beginTime;
+
     }
 }
 
