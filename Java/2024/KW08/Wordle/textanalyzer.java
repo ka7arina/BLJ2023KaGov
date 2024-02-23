@@ -6,9 +6,9 @@ public class textanalyzer {
 
     // create constants
     private static final int MAX_ATTEMPTS = 6;
-    private static final String GREEN = "\u001B[0;32m";
-    private static final String YELLOW = "\u001B[0;33m";
-    private static final String RESET = "\u001B[0;0m";
+    private static final String GREEN = "\u001B[42m";
+    private static final String YELLOW = "\u001B[43m";
+    private static final String RESET = "\u001B[0m";
 
 
     public static void wordleMechanic() throws IOException {
@@ -69,11 +69,11 @@ public class textanalyzer {
 
 
                             if (guessedChar == secretChar) {
-                                hint.append(GREEN + guessedChar + RESET); // correct letter correct position
+                                hint.append(GREEN + " " + guessedChar + " " + RESET); // correct letter correct position
                             } else if (randomWord.contains(String.valueOf(guessedChar))) {
-                                hint.append(YELLOW + guessedChar + RESET); // correct letter, wrong position
+                                hint.append(YELLOW + " " + guessedChar + " " + RESET); // correct letter, wrong position
                             } else {
-                                hint.append(guessedChar); // incorrect letter
+                                hint.append(" " + guessedChar + " "); // incorrect letter
                             }
                         }
                         System.out.println(hint.toString());
