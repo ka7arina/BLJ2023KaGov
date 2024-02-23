@@ -31,15 +31,13 @@ public class textanalyzer {
 
         long beginTime = System.currentTimeMillis();
 
+        boolean gameWon = false;
 
 
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
             if (attempts < MAX_ATTEMPTS) {
 
-
                 String userinput;
-
-                StringBuilder hint = new StringBuilder();
 
                 while (true) {
                     System.out.println("     Input your guess:");
@@ -50,39 +48,50 @@ public class textanalyzer {
                     } else {
                         break;
                     }
-
                 }
-                userinput = userinput.toLowerCase();
+
+                if (userinput.equals(randomWord)) {
+                    System.out.println("Congrats! You won!");
+                    break ;
+                }
+
+                StringBuilder hint = new StringBuilder();
 
 
-                for (int i = 0; i < userinput.length(); i++) {
+                    userinput = userinput.toLowerCase();
 
 
-                    char guessedChar = userinput.charAt(i);
-                    char secretChar = randomWord.charAt(i);
+                    for (int i = 0; i < userinput.length(); i++) {
 
-                    if (userinput.equals(randomWord)) {
-                        System.out.println("Congrats! You won!");
-                        break;
-                    } else if (guessedChar == secretChar) {
-                        hint.append(GREEN + guessedChar + RESET); // correct letter correct position
-                    } else if (randomWord.contains(String.valueOf(guessedChar))) {
-                        hint.append(YELLOW + guessedChar + RESET); // correct letter, wrong position
-                    } else {
-                        hint.append(guessedChar); // incorrect letter
+
+                            char guessedChar = userinput.charAt(i);
+                            char secretChar = randomWord.charAt(i);
+
+
+                            if (guessedChar == secretChar) {
+                                hint.append(GREEN + guessedChar + RESET); // correct letter correct position
+                            } else if (randomWord.contains(String.valueOf(guessedChar))) {
+                                hint.append(YELLOW + guessedChar + RESET); // correct letter, wrong position
+                            } else {
+                                hint.append(guessedChar); // incorrect letter
+                            }
+                        }
+                        System.out.println(hint.toString());
                     }
+                if (attempts == MAX_ATTEMPTS - 1){
+                    System.out.println("You are out of guesses! The word was " + randomWord);
+                    achievements.mechanic();
                 }
-                System.out.println(hint.toString());
+
             }
 
-        } System.out.println("You are out of guesses! The word was " + randomWord);
-        achievements.mechanic();
 
-        long endTime = System.currentTimeMillis();
-        long difference = endTime - beginTime;
+            long endTime = System.currentTimeMillis();
+            long difference = endTime - beginTime;
 
+        }
     }
-}
+
 
 
 
