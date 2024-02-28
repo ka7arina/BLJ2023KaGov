@@ -88,6 +88,7 @@ public class TriangleApp {
    * This method prints the evaluated code in an aesthetically pleasing way.
    */
   private void printResult() {
+    System.out.println("CODE: " + determineTriangleType());
 	// TODO: Print code
   }
 
@@ -99,6 +100,7 @@ public class TriangleApp {
    */
   private String promptSide(String side) {
     // TODO: Ask user for input
+      return side;
   }
 
   /**
