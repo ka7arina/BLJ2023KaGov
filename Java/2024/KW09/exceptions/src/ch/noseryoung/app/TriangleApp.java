@@ -146,7 +146,12 @@ public class TriangleApp {
    * @return The corresponding code for each triangle.
    */
   private String determineTriangleType() {
-    // TODO: Based on sideA, sideB, sideC, return correct code
-    return null;
+
+    switch(determineTriangleType()) {
+      case 1:
+        break;
+    }
+
+    return code;
   }
 }
