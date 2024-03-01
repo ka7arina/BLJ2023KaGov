@@ -39,4 +39,14 @@ public class QuoteGetter {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public String toString() {
+        return "[{\n" +
+                "\t\"q\": \"Lack of emotion causes lack of progress and lack of motivation.\",\n" +
+                "\t\"a\": \"Tony Robbins\",\n" +
+                "\t\"i\": \"https://zenquotes.io/img/tony-robbins.jpg\",\n" +
+                "\t\"c\": \"63\"";
+    }
+
 }
