@@ -2,7 +2,8 @@ package ch.noseryoung.app;
 
 import ch.noseryoung.exceptions.IllegalTriangleSideException;
 import ch.noseryoung.exceptions.TriangleException;
-import java.sql.SQLOutput;
+import ch.noseryoung.exceptions.ZeroTriangleSideException;
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -120,23 +121,24 @@ public class TriangleApp {
   /**
    * This method validates the three entered values, to be used as sides for a
    * triangle.
-   * 
+   *
    * @throws TriangleException if the validation fails. This means that the
    *                           entered values do not lead to a triangle.
    */
   private void validateInput() throws TriangleException {
     try {
       sideA = Double.parseDouble(sideAInput);
-      // TODO: Do the same for sideB and SideC
+      sideB = Double.parseDouble(sideBInput);
+      sideA = Double.parseDouble(sideAInput);
 	  
     } catch (NumberFormatException nfe) {
       throw new IllegalTriangleSideException();
     }
 
     if (sideA == 0 || sideB == 0 || sideC == 0) {
-      // TODO: throws ZeroTriangleSideException
+      throw new ZeroTriangleSideException();
     }
-	// TODO: Validate other triangle cases
+    // TODO: validate other inputs
   }
 
   /**
@@ -145,13 +147,11 @@ public class TriangleApp {
    * 
    * @return The corresponding code for each triangle.
    */
-  private String determineTriangleType() {
 
-    switch(determineTriangleType()) {
-      case 1:
-        break;
+    private String determineTriangleType() {
+
+      return code;
     }
 
-    return code;
-  }
+}
 }
