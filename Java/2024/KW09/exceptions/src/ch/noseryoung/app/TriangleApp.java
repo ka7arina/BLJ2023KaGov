@@ -7,7 +7,6 @@ import ch.noseryoung.exceptions.ZeroTriangleSideException;
 import java.util.Date;
 import java.util.Scanner;
 
-// TODO: Import the exceptions
 
 public class TriangleApp {
 
@@ -129,17 +128,21 @@ public class TriangleApp {
     try {
       sideA = Double.parseDouble(sideAInput);
       sideB = Double.parseDouble(sideBInput);
-      sideA = Double.parseDouble(sideAInput);
-	  
+      sideC = Double.parseDouble(sideCInput); // Ensure this is correct, parsing sideCInput into sideC
     } catch (NumberFormatException nfe) {
-      throw new IllegalTriangleSideException();
+      throw new IllegalTriangleSideException("Input must be numeric.");
     }
 
-    if (sideA == 0 || sideB == 0 || sideC == 0) {
-      throw new ZeroTriangleSideException();
+    if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+      throw new ZeroTriangleSideException("Sides must be greater than zero.");
     }
-    // TODO: validate other inputs
+
+    // Triangle inequality theorem check
+    if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA) {
+      throw new IllegalTriangleSideException("The sum of any two sides must be greater than the third side.");
+    }
   }
+
 
   /**
    * This method determines whether the three entered values lead to a
@@ -154,4 +157,4 @@ public class TriangleApp {
     }
 
 }
-}
+
