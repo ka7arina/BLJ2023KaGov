@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class QuoteGetter {
     public static void getQuote() {
-
         try {
             URL url = new URL("https://zenquotes.io/api/random/");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -24,32 +23,35 @@ public class QuoteGetter {
                 }
                 in.close();
 
+                Scanner userInput = new Scanner(System.in);
 
-                Scanner userinput = new Scanner(System.in);
-                System.out.println("Do you want another quote? [y/n]");
+                while (true) {
+                    System.out.println("Do you want to get a quote? [y/n]");
+                    String anotherQuote = userInput.nextLine();
 
-                String anotherQuote = userinput.nextLine();
-
-                if (anotherQuote.equals("y")) {
-
-                    // New code for parsing and printing the quote and author
-                    String jsonResponse = response.toString();
-                    int quoteStart = jsonResponse.indexOf("\"q\":\"") + 5;
-                    int quoteEnd = jsonResponse.indexOf("\"", quoteStart);
-                    String quote = jsonResponse.substring(quoteStart, quoteEnd);
-                    int authorStart = jsonResponse.indexOf("\"a\":\"", quoteEnd) + 5;
-                    int authorEnd = jsonResponse.indexOf("\"", authorStart);
-                    String author = jsonResponse.substring(authorStart, authorEnd);
-                    System.out.println("\"" + quote + "\" - " + author);
+                    if (anotherQuote.equals("y")) {
+                        // New code for parsing and printing the quote and author
+                        String jsonResponse = response.toString();
+                        int quoteStart = jsonResponse.indexOf("\"q\":\"") + 5;
+                        int quoteEnd = jsonResponse.indexOf("\"", quoteStart);
+                        String quote = jsonResponse.substring(quoteStart, quoteEnd);
+                        int authorStart = jsonResponse.indexOf("\"a\":\"", quoteEnd) + 5;
+                        int authorEnd = jsonResponse.indexOf("\"", authorStart);
+                        String author = jsonResponse.substring(authorStart, authorEnd);
+                        System.out.println("\"" + quote + "\" - " + author);
+                    } else if (anotherQuote.equals("n")) {
+                        System.out.println("Exiting program...");
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter 'y' or 'n'.");
+                    }
                 }
             } else {
                 System.out.println("GET Request failed");
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
+
