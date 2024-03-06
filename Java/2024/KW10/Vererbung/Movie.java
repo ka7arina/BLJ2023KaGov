@@ -7,8 +7,8 @@ public class Movie extends Medium {
     @Override
     public void printInfo() {
         super.printInfo();
-        String moreInfo = "\nDirector: " + director
-                + "Length" + length;
+        String moreInfo = "Director: " + director
+                + "\nLength: " + length;
         System.out.println(moreInfo);
     }
 

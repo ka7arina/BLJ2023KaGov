@@ -3,6 +3,13 @@ public class Medium {
     private String yearOfPublication;
     private String language;
 
+    public void printInfo() {
+        String info = "\nTitle: " + title +
+                "\nYear of Publication: " + yearOfPublication +
+                "\nLanguage: " + language;
+        System.out.println(info);
+    }
+
     public String getTitle() {
         return title;
     }
@@ -27,11 +34,5 @@ public class Medium {
         this.language = language;
     }
 
-    public void printInfo() {
-        String info = "Title: " + title +
-                "\nYear of Publication: " + yearOfPublication +
-                "\nLanguage: " + language;
-        System.out.println(info);
-    }
 }
 

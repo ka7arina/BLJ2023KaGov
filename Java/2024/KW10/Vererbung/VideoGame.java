@@ -4,7 +4,7 @@ public class VideoGame extends Medium {
    @Override
    public void printInfo() {
       super.printInfo();
-      String moreInfo = "\nCreator: " + creator;
+      String moreInfo = "Creator: " + creator;
       System.out.println(moreInfo);
    }
 

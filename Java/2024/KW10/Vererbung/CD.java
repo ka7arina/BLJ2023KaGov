@@ -5,8 +5,8 @@ public class CD extends Medium {
     @Override
     public void printInfo() {
         super.printInfo();
-        String moreInfo = "\nArtist: " + artist
-                + "Length:" + length;
+        String moreInfo = "Artist: " + artist
+                + "\nLength: " + length;
         System.out.println(moreInfo);
     }
 
