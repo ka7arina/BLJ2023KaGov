@@ -30,6 +30,7 @@ public class QuoteGetter {
                     String anotherQuote = userInput.nextLine();
 
                     if (anotherQuote.equals("y")) {
+                        PicGetter.getCatPic();
                         // New code for parsing and printing the quote and author
                         String jsonResponse = response.toString();
                         int quoteStart = jsonResponse.indexOf("\"q\":\"") + 5;
