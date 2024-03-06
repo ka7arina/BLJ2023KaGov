@@ -26,6 +26,7 @@ public class QuoteGetter {
                 Scanner userInput = new Scanner(System.in);
 
                 while (true) {
+
                     System.out.println("Do you want to get a quote? [y/n]");
                     String anotherQuote = userInput.nextLine();
 
@@ -35,10 +36,8 @@ public class QuoteGetter {
                         int quoteStart = jsonResponse.indexOf("\"q\":\"") + 5;
                         int quoteEnd = jsonResponse.indexOf("\"", quoteStart);
                         String quote = jsonResponse.substring(quoteStart, quoteEnd);
-                        int authorStart = jsonResponse.indexOf("\"a\":\"", quoteEnd) + 5;
-                        int authorEnd = jsonResponse.indexOf("\"", authorStart);
-                        String author = jsonResponse.substring(authorStart, authorEnd);
-                        System.out.println("\"" + quote + "\" - " + author);
+
+                        PicGetter.getCatPic();
                     } else if (anotherQuote.equals("n")) {
                         System.out.println("Exiting program...");
                         break;

@@ -11,7 +11,7 @@ public class PicGetter {
 
         Image image = null;
         try {
-            URL url = new URL("https://cataas.com/cat/says/:text?fontSize=:size&fontColor=:color");
+            URL url = new URL("https://cataas.com/cat/says/text?fontSize=50&fontColor=white");
             image = ImageIO.read(url);
         } catch (IOException e) {
             e.printStackTrace();
