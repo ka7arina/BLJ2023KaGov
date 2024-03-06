@@ -26,7 +26,7 @@ public class QuoteGetter {
                 Scanner userInput = new Scanner(System.in);
 
                 while (true) {
-                    System.out.println("Do you want to get a quote? [y/n]");
+                    System.out.println("do you want to get a quote? [y/n]");
                     String anotherQuote = userInput.nextLine();
 
                     if (anotherQuote.equals("y")) {
