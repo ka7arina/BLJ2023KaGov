@@ -1,7 +1,7 @@
 public class Medium {
     private String title;
     private String yearOfPublication;
-    private String languages;
+    private String language;
 
     public String getTitle() {
         return title;
@@ -19,12 +19,19 @@ public class Medium {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public String getLanguages() {
-        return languages;
+    public String getLanguage() {
+        return language;
     }
 
-    public void setLanguages(String languages) {
-        this.languages = languages;
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public void printInfo() {
+        String info = "Title: " + title +
+                "\nYear of Publication: " + yearOfPublication +
+                "\nLanguage: " + language;
+        System.out.println(info);
     }
 }
 

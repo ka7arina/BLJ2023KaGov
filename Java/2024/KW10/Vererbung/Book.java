@@ -1,6 +1,14 @@
 public class Book extends Medium {
     private String author;
     private double numberOfPages;
+@Override
+    public void printInfo() {
+        super.printInfo();
+        String moreInfo = "Author: " + author
+                + "\nNumber of Pages: " + numberOfPages;
+        System.out.println(moreInfo);
+    }
+
 
     public String getAuthor() {
         return author;

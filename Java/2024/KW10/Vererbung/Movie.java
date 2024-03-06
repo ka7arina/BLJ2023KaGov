@@ -2,8 +2,15 @@ import java.util.List;
 
 public class Movie extends Medium {
     private String director;
-    private List<String> actors;
     private double length;
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        String moreInfo = "\nDirector: " + director
+                + "Length" + length;
+        System.out.println(moreInfo);
+    }
 
     public String getDirector() {
         return director;
@@ -13,13 +20,6 @@ public class Movie extends Medium {
         this.director = director;
     }
 
-    public List<String> getActors() {
-        return actors;
-    }
-
-    public void setActors(List<String> actors) {
-        this.actors = actors;
-    }
 
     public double getLength() {
         return length;
