@@ -28,6 +28,13 @@ public class CoordinateSystem {
         return points.toArray(new CSPoint[0]);
     }
 
+    // gets the size of the coordinate system
+    public int getCoordinateSystemSize() {
+        return coordinateSystemSize;
+    }
 
+    public void setCoordinateSystemSize(int coordinateSystemSize) {
+        this.coordinateSystemSize = coordinateSystemSize;
+    }
 
 }
