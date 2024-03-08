@@ -14,6 +14,16 @@ public class CoordinateSystem {
         this.points = new ArrayList<>();
     }
 
+    // adds the points to the list
+    public void addPoints(CSPoint csPoint){
+        points.add(csPoint);
+    }
+
+    // returns the list with the points
+    public List<CSPoint> getPoints() {
+        return points;
+    }
+
     public CSPoint[] getAllPoints(){
         return points.toArray(new CSPoint[0]);
     }
