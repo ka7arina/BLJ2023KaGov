@@ -7,8 +7,9 @@ public class Starter {
 
         cs.addPoints(p1);
         cs.addPoints(p2);
-        
+
         new CSRenderer(cs, 1, 3);
         CSLineSegment lineSegment = new CSLineSegment();
+
     }
 }

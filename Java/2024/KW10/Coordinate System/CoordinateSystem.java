@@ -5,6 +5,7 @@ public class CoordinateSystem {
 
     private int coordinateSystemSize;
     private List<CSPoint> points;
+    private List<CSLineSegment> lineSegments;
 
     public CoordinateSystem(int coordinateSystemSize) throws IllegalAccessException {
         if(coordinateSystemSize <= 0 || coordinateSystemSize % 20 != 0){
@@ -12,6 +13,7 @@ public class CoordinateSystem {
         }
         this.coordinateSystemSize = coordinateSystemSize;
         this.points = new ArrayList<>();
+        this.lineSegments = new ArrayList<>();
     }
 
     // adds the points to the list
@@ -35,6 +37,10 @@ public class CoordinateSystem {
     // gets the size of the coordinate system
     public int getCoordinateSystemSize() {
         return coordinateSystemSize;
+    }
+
+    public List<CSLineSegment> getLineSegments(){
+        return lineSegments;
     }
 
     public void setCoordinateSystemSize(int coordinateSystemSize) {
