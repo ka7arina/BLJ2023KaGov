@@ -24,6 +24,10 @@ public class CoordinateSystem {
         return points;
     }
 
+    public void setPoints(List<CSPoint> points) {
+        this.points = points;
+    }
+
     public CSPoint[] getAllPoints(){
         return points.toArray(new CSPoint[0]);
     }
