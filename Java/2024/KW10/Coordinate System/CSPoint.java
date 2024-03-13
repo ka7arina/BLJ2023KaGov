@@ -9,7 +9,7 @@ public class CSPoint extends Point {
     }
 
     public CSPoint(int x1, int y1, int x2, int y2) {
-        super(x1, y1, x2, y2);
+        super(x1, y1);
         this.id = IDcounter++;
     }
 
