@@ -1,14 +1,34 @@
-import javax.swing.JPanel;
-import java.awt.*;
 
-public class CSLineSegment extends JPanel {
 
-    public void drawLine(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
+public class CSLineSegment {
 
-        g2d.drawLine(40, 70, 40, 70);
+    private static int count = 0;
+    private int id;
+    private CSPoint start;
+    private CSPoint end;
 
-        super.paintComponent(g);
-        drawLine(g);
+    public CSLineSegment(CSPoint start, CSPoint end) {
+        this.id = count++;
+        this.start = start;
+        this.end = end;
+    }
+
+    public CSPoint lineStart(){
+        return start;
+    }
+
+    public CSPoint lineEnd(){
+        return end;
+    }
+
+    public int getId() {
+        return id;}
+
+    public void setLineStart(CSPoint start) {
+        this.start = start;
+    }
+
+    public void setLineEnd(CSPoint end) {
+        this.end = end;
     }
 }

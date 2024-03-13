@@ -1,8 +1,9 @@
+
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.Color;
 
 public class CoordinateSystem {
-
     private int coordinateSystemSize;
     private List<CSPoint> points;
     private List<CSLineSegment> lineSegments;
@@ -16,35 +17,31 @@ public class CoordinateSystem {
         this.lineSegments = new ArrayList<>();
     }
 
-    // adds the points to the list
     public void addPoints(CSPoint csPoint){
         points.add(csPoint);
     }
 
-    // returns the list with the points
-    public List<CSPoint> getPoints() {
-        return points;
+    public void addLineSegment(CSLineSegment lineSegment){
+        lineSegments.add(lineSegment);
     }
 
-    public void setPoints(List<CSPoint> points) {
-        this.points = points;
+    public List<CSPoint> getPoints() {
+        return points;
     }
 
     public CSPoint[] getAllPoints(){
         return points.toArray(new CSPoint[0]);
     }
 
-    // gets the size of the coordinate system
-    public int getCoordinateSystemSize() {
-        return coordinateSystemSize;
-    }
-
     public List<CSLineSegment> getLineSegments(){
         return lineSegments;
+    }
+
+    public int getCoordinateSystemSize() {
+        return coordinateSystemSize;
     }
 
     public void setCoordinateSystemSize(int coordinateSystemSize) {
         this.coordinateSystemSize = coordinateSystemSize;
     }
-
 }
