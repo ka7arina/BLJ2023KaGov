@@ -2,7 +2,10 @@
 public class Child extends Parent {
 
 
-    // overrides the meow function in parent
+    /* overrides the meow function in parent
+    * when you click on the little target circle it brings you to the superclass
+     */
+
     @Override
     public void meow() {
 
