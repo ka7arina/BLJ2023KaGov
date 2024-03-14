@@ -2,11 +2,11 @@ public class Starter {
     public static void main(String[] args) throws IllegalAccessException {
         CoordinateSystem cs = new CoordinateSystem(500);
 
-        // creates points (coordinates) the first CSPoint defines from where the line goes
+        // creates the points (coordinates) and the lines connecting them
         cs.addLineSegment(new CSLineSegment(new CSPoint(250, -250),new CSPoint(-250, 250)));
-        cs.addLineSegment(new CSLineSegment (new CSPoint(68, -80),new CSPoint (-80, 68)));
+        cs.addLineSegment(new CSLineSegment (new CSPoint(68, -80),new CSPoint (-250, 68)));
 
-        // renders everything
+        // calls CSRenderer and renders the window with the points size being 3
         new CSRenderer(cs, 1, 3);
 
     }
