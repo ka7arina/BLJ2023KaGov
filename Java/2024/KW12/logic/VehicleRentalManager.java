@@ -1,5 +1,7 @@
 package logic;
 
+import vehicles.Car;
+
 import java.time.LocalDate;
 
 public class VehicleRentalManager {

@@ -1,8 +1,10 @@
 package vehicles;
 import logic.Vehicle;
 
-public class Compact extends Vehicle {
-    public Compact() {
+import java.time.LocalDate;
+
+public class Compact extends Vehicle implements Motorized {
+    public Compact(LocalDate year, String brand, String mileage, String color) {
         super(year, brand, mileage, color);
     }
 }
