@@ -1,5 +1,6 @@
 public class CSLineSegment {
 
+    // variables
     private static int count = 0;
     private int id;
     private CSPoint start;
