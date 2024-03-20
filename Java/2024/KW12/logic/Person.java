@@ -1,3 +1,5 @@
+package logic;
+
 import java.time.LocalDate;
 
 public class Person {
@@ -10,8 +12,13 @@ public class Person {
     private String phoneNumber;
 
     // Constructor
-    public Person() {
+    public Person(String firstName, String lastName, LocalDate birthYear, String address, String phoneNumber) {
 
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthYear = birthYear;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     // Getters and Setters
