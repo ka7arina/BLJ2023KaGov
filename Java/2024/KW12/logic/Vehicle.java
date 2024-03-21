@@ -21,7 +21,7 @@ public class Vehicle {
     }
 
     public void printInfo() {
-        String info = year + brand + mileage + color;
+        String info = "Name: " + name + "\nYear: " + year + "\nBrand: " + brand + "\nMileage: " + mileage + "\nColor: " + color;
         System.out.println(info);
     }
 
