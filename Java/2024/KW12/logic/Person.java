@@ -64,12 +64,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthYear=" + birthYear +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+        return "Person: " +
+                "First Name: " + firstName +
+                ", Last Name: " + lastName +
+                ", Birth Year: " + birthYear +
+                ", Address: " + address +
+                ", Phone Number: " + phoneNumber + "\n";
     }
 }
