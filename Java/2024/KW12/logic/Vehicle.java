@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Vehicle {
 
-    public LocalDate year;
+    public int year;
 
     public String brand;
 
@@ -15,7 +15,7 @@ public class Vehicle {
     public String name;
 
 
-    public Vehicle(String name, LocalDate year, String brand, String mileage, String color) {
+    public Vehicle(String name, int year, String brand, String mileage, String color) {
 
         this.name = name;
         this.year = year;
@@ -37,11 +37,11 @@ public class Vehicle {
         this.name = name;
     }
 
-    public LocalDate getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(LocalDate year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
