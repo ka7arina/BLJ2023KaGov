@@ -8,7 +8,6 @@ public class VehicleRentalManager {
     public ArrayList<Person> denyList = new ArrayList<>();
     public ArrayList<Vehicle> vehicles = new ArrayList<>();
 
-
     public void customerList() {
 
         // Create birthyear and customers
@@ -32,9 +31,8 @@ public class VehicleRentalManager {
 
     }
 
-    public void vehicles() {
-
+    public void addVehicle(Vehicle vehicle) {
+    vehicles.add(vehicle);
     }
-
 
 }

@@ -1,5 +1,4 @@
 package logic;
-
 import vehicles.Camper;
 
 public class Starter {
@@ -8,7 +7,8 @@ public class Starter {
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
 
         Camper camper = new Camper("Hymermobil", 1957, "HYMER", "20 mpg", "White", "Yes", "Yes", 2);
-        camper.printInfo();
+        vehicleRentalManager.addVehicle(camper);
+        System.out.println(vehicleRentalManager.vehicles);
 
     }
 }
