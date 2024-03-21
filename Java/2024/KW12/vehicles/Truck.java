@@ -1,10 +1,19 @@
 package vehicles;
 import logic.Vehicle;
 
-import java.time.LocalDate;
-
 public class Truck extends Vehicle implements Motorized {
-    public Truck(String name, int year, String brand, String mileage, String color) {
+
+    public double storageSpace;
+
+    public Truck(String name, int year, String brand, double mileage, String color, double storageSpace) {
         super(name, year, brand, mileage, color);
+        this.storageSpace = storageSpace;
+    }
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        String truckInfo = "Storage Space: " + storageSpace;
+        System.out.println(truckInfo);
     }
 }
