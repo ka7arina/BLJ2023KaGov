@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class VehicleRentalManager {
 
+    ArrayList<Person> customers = new ArrayList<>();
+    ArrayList<Person> denyList = new ArrayList<>();
+
     public void customerList() {
 
         // Create birthyear and customers
@@ -14,14 +17,14 @@ public class VehicleRentalManager {
         Person customer2 = new Person("Maria", "Smith", birth2, "Rosengartenstrasse 8, 8037 Zürich", "+41 76 897 65 23");
 
         // Create Arraylist for customers
-        ArrayList<Person> customers = new ArrayList<>();
         customers.add(customer1);
         customers.add(customer2);
 
         System.out.println(customers);
     }
 
-    public void denyList() {
+    public void addPersonToDenyList(Person person) {
+        denyList.add(person);
 
     }
 
