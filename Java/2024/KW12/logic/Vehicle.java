@@ -12,8 +12,12 @@ public class Vehicle {
 
     public String color;
 
-    public Vehicle(LocalDate year, String brand, String mileage, String color) {
+    public String name;
 
+
+    public Vehicle(String name, LocalDate year, String brand, String mileage, String color) {
+
+        this.name = name;
         this.year = year;
         this.brand = brand;
         this.mileage = mileage;
@@ -23,6 +27,14 @@ public class Vehicle {
 
     public void printInfo() {
         String info = year + brand + mileage + color;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDate getYear() {
