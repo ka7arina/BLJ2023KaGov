@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class VehicleRentalManager {
 
-    ArrayList<Person> customers = new ArrayList<>();
-    ArrayList<Person> denyList = new ArrayList<>();
+    public ArrayList<Person> customerList = new ArrayList<>();
+    public ArrayList<Person> denyList = new ArrayList<>();
+    public ArrayList<Vehicle> vehicles = new ArrayList<>();
+
 
     public void customerList() {
 
@@ -17,18 +19,23 @@ public class VehicleRentalManager {
         Person customer2 = new Person("Maria", "Smith", birth2, "Rosengartenstrasse 8, 8037 Zürich", "+41 76 897 65 23");
 
         // Create Arraylist for customers
-        customers.add(customer1);
-        customers.add(customer2);
+        customerList.add(customer1);
+        customerList.add(customer2);
 
-        System.out.println(customers);
+        System.out.println(customerList);
+
     }
 
     public void addPersonToDenyList(Person person) {
         denyList.add(person);
+        System.out.println(denyList);
 
     }
 
     public void vehicles() {
+        Vehicle camper1 = new Vehicle("Hymermobil", 1957, "HYMER", "20 mpg", "white");
+
+        vehicles.add(camper1);
     }
 
 
