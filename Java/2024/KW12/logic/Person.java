@@ -7,7 +7,7 @@ public class Person {
     // Variables
     private String firstName;
     private String lastName;
-    private LocalDate birthYear;
+    public LocalDate birthYear;
     private String address;
     private String phoneNumber;
 
@@ -64,8 +64,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person: " +
-                "First Name: " + firstName +
+        return "First Name: " + firstName +
                 ", Last Name: " + lastName +
                 ", Birth Year: " + birthYear +
                 ", Address: " + address +

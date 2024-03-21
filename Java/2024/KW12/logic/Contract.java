@@ -1,5 +1,4 @@
 package logic;
-
 import java.time.LocalDate;
 
 public class Contract {
