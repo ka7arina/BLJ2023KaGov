@@ -15,7 +15,7 @@ public class Compact extends Vehicle implements Motorized {
         this.seatAmount = seatAmount;
     }
 
-    public Compact(String name, int year, String brand, String mileage, String color, int seatAmount) {
+    public Compact(String name, int year, String brand, double mileage, String color, int seatAmount) {
         super(name, year, brand, mileage, color);
     }
 }

@@ -12,7 +12,7 @@ public class Camper extends Vehicle implements Liveable {
 
     public String hasKitchen;
 
-    public Camper(String name, int year, String brand, String mileage, String color, String hasShower, String hasKitchen, int bedAmount) {
+    public Camper(String name, int year, String brand, double mileage, String color, String hasShower, String hasKitchen, int bedAmount) {
 
         // Calling the constructor of Vehicle
         super(name, year, brand, mileage, color);

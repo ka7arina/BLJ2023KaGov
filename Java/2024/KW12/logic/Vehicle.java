@@ -6,12 +6,12 @@ public class Vehicle {
 
     public int year;
     public String brand;
-    public String mileage;
+    public double mileage;
     public String color;
     public String name;
 
 
-    public Vehicle(String name, int year, String brand, String mileage, String color) {
+    public Vehicle(String name, int year, String brand, double mileage, String color) {
 
         this.name = name;
         this.year = year;
@@ -21,7 +21,7 @@ public class Vehicle {
     }
 
     public void printInfo() {
-        String info = "Name: " + name + "\nYear: " + year + "\nBrand: " + brand + "\nMileage: " + mileage + "\nColor: " + color;
+        String info = "Name: " + name + "\nYear: " + year + "\nBrand: " + brand + "\nMileage: " + mileage + " MGP\nColor: " + color;
         System.out.println(info);
     }
 
@@ -49,11 +49,11 @@ public class Vehicle {
         this.brand = brand;
     }
 
-    public String getMileage() {
+    public double getMileage() {
         return mileage;
     }
 
-    public void setMileage(String mileage) {
+    public void setMileage(double mileage) {
         this.mileage = mileage;
     }
 
