@@ -5,13 +5,9 @@ import java.time.LocalDate;
 public class Vehicle {
 
     public int year;
-
     public String brand;
-
     public String mileage;
-
     public String color;
-
     public String name;
 
 
@@ -24,9 +20,9 @@ public class Vehicle {
         this.color = color;
     }
 
-
     public void printInfo() {
         String info = year + brand + mileage + color;
+        System.out.println(info);
     }
 
     public String getName() {
