@@ -33,9 +33,7 @@ public class VehicleRentalManager {
     }
 
     public void vehicles() {
-        Vehicle camper1 = new Vehicle("Hymermobil", 1957, "HYMER", "20 mpg", "white");
 
-        vehicles.add(camper1);
     }
 
 
