@@ -22,7 +22,7 @@ public class Starter {
         // launch program with selected color
         CoordinateSystem cs = new CoordinateSystem(500);
 
-        // Pass the selected line color to your renderer
+        // pass selected line color to the renderer
         new CSRenderer(cs, 1, 3, lineColor);
 
         if ("Rectangle".equals(selectedShape)) {
