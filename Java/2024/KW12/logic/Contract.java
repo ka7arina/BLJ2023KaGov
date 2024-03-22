@@ -9,10 +9,9 @@ public class Contract {
     public LocalDate endDate;
     public String contractModel;
     public int leasingRate;
+    public Vehicle vehicle;
 
-    public String vehicle;
-
-    public Contract(Person person, String vehicle, LocalDate startDate, LocalDate endDate, String contractModel, int leasingRate) {
+    public Contract(Person person, Vehicle vehicle, LocalDate startDate, LocalDate endDate, String contractModel, int leasingRate) {
         this.person = person;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -34,11 +33,11 @@ public class Contract {
         this.person = person;
     }
 
-    public String getVehicle() {
+    public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(String vehicle) {
+    public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
