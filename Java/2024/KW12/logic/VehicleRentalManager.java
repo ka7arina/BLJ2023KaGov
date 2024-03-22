@@ -29,5 +29,6 @@ public class VehicleRentalManager {
 
     public void createContract(Contract newContract) {
         contracts.add(newContract);
+        System.out.println("Contracts: " + contracts.toString());
     }
 }

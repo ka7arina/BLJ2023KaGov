@@ -1,7 +1,6 @@
 package logic;
 import vehicles.Camper;
 import vehicles.Truck;
-
 import java.time.LocalDate;
 
 public class Starter {
@@ -20,11 +19,16 @@ public class Starter {
 
         vehicleRentalManager.addPersonToDenyList(denied1);
 
-        Truck truck = new Truck("Mercedes Vita", 1954-1-1, "Mercedes", 36.7, "White", 580);
+        Truck truck = new Truck("Mercedes Vita", 1954 - 1 - 1, "Mercedes", 36.7, "White", 580);
 
         vehicleRentalManager.addVehicle(truck);
 
         Camper camper = new Camper("Hymermobil", 1957, "HYMER", 20, "White", "Yes", "Yes", 2);
         vehicleRentalManager.addVehicle(camper);
+
+        Contract contract = new Contract("John Miller", "Mercedes Vita", LocalDate.of(2024, 3, 22), LocalDate.of(2024, 4, 22), "Idek what contract models really are but slay anyways woohoo", 650);
+
+        vehicleRentalManager.createContract(contract);
+
     }
 }

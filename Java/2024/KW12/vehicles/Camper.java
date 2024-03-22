@@ -1,9 +1,7 @@
 package vehicles;
 import logic.Vehicle;
 
-import java.time.LocalDate;
-
-public class Camper extends Vehicle implements Liveable {
+public class Camper extends Vehicle {
 
 
     public String hasShower;
