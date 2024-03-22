@@ -1,7 +1,7 @@
 package vehicles;
 import logic.Vehicle;
 
-public class Truck extends Vehicle implements Motorized {
+public class Truck extends Vehicle {
 
     public double storageSpace;
 
