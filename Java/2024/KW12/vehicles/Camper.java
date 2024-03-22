@@ -24,8 +24,13 @@ public class Camper extends Vehicle implements Liveable {
     @Override
     public void printInfo() {
         super.printInfo();
-        String camperInfo = "Shower included: " + hasShower + "\nKitchen included: " + hasKitchen + "\nAmount of beds: " + bedAmount;
+        String camperInfo = ", Shower included: " + hasShower + ", Kitchen included: " + hasKitchen + ", Amount of beds: " + bedAmount;
         System.out.println(camperInfo);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Shower included: " + hasShower + ", Kitchen included: " + hasKitchen + ", Amount of beds: " + bedAmount;
     }
 
     public String getHasShower() {

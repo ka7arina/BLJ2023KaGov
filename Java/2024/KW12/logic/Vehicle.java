@@ -1,7 +1,5 @@
 package logic;
 
-import java.time.LocalDate;
-
 public class Vehicle {
 
     public int year;
@@ -21,8 +19,12 @@ public class Vehicle {
     }
 
     public void printInfo() {
-        String info = "Name: " + name + "\nYear: " + year + "\nBrand: " + brand + "\nMileage: " + mileage + " MGP\nColor: " + color;
-        System.out.println(info);
+        String info = "Name: " + name + ", Year: " + year + ", Brand: " + brand + ", Mileage: " + mileage + " MGP, Color: " + color;
+    }
+
+    @Override
+    public String toString() {
+        return "\nName: " + name + ", Year: " + year + ", Brand: " + brand + ", Mileage: " + mileage + " MGP, Color: " + color;
     }
 
     public String getName() {

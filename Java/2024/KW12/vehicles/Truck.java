@@ -13,7 +13,12 @@ public class Truck extends Vehicle implements Motorized {
     @Override
     public void printInfo() {
         super.printInfo();
-        String truckInfo = "Storage Space: " + storageSpace;
+        String truckInfo = ", Storage Space: " + storageSpace;
         System.out.println(truckInfo);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Storage Space: " + storageSpace;
     }
 }
