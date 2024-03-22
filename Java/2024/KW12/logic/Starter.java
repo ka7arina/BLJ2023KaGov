@@ -1,10 +1,11 @@
 package logic;
+import exceptions.MinorAgeException;
 import vehicles.Camper;
 import vehicles.Truck;
 import java.time.LocalDate;
 
 public class Starter {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MinorAgeException {
 
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
 
@@ -26,7 +27,7 @@ public class Starter {
         Camper camper = new Camper("Hymermobil", 1957, "HYMER", 20, "White", "Yes", "Yes", 2);
         vehicleRentalManager.addVehicle(camper);
 
-        Contract contract = new Contract("John Miller", "Mercedes Vita", LocalDate.of(2024, 3, 22), LocalDate.of(2024, 4, 22), "Idek what contract models really are but slay anyways woohoo", 650);
+        Contract contract = new Contract(customer1, "Mercedes Vita", LocalDate.of(2024, 3, 22), LocalDate.of(2024, 4, 22), "Idek what contract models really are but slay anyways woohoo", 650);
 
         vehicleRentalManager.createContract(contract);
 

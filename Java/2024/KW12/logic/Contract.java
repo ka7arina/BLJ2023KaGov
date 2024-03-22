@@ -4,7 +4,7 @@ import java.time.LocalDate;
 public class Contract {
 
     // Variables
-    public String person;
+    public Person person;
     public LocalDate startDate;
     public LocalDate endDate;
     public String contractModel;
@@ -12,7 +12,7 @@ public class Contract {
 
     public String vehicle;
 
-    public Contract(String person, String vehicle, LocalDate startDate, LocalDate endDate, String contractModel, int leasingRate) {
+    public Contract(Person person, String vehicle, LocalDate startDate, LocalDate endDate, String contractModel, int leasingRate) {
         this.person = person;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -25,6 +25,23 @@ public class Contract {
 
 
     // Getters and Setters
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(String vehicle) {
+        this.vehicle = vehicle;
+    }
+
     public LocalDate getStartDate() {
         return startDate;
     }
