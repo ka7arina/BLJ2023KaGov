@@ -1,4 +1,6 @@
 public interface Formen {
 
-    void createRectangle(CoordinateSystem cs);
+    void create(CoordinateSystem cs);
+
+
 }
