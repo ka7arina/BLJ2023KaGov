@@ -64,10 +64,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "First Name: " + firstName +
+        return "\nFirst Name: " + firstName +
                 ", Last Name: " + lastName +
                 ", Birth Year: " + birthYear +
                 ", Address: " + address +
-                ", Phone Number: " + phoneNumber + "\n";
+                ", Phone Number: " + phoneNumber;
     }
 }
