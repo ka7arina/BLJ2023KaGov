@@ -7,7 +7,39 @@ import vehicles.Truck;
 import java.time.LocalDate;
 
 public class Starter {
-    public static void main(String[] args) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
+    public static void main(String[] args) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException, InterruptedException {
+
+        System.out.println(" ___       __   _______   ___       ________  ________  _____ ______   _______           _________  ________          _________  ___  ___  _______      \n" +
+                "|\\  \\     |\\  \\|\\  ___ \\ |\\  \\     |\\   ____\\|\\   __  \\|\\   _ \\  _   \\|\\  ___ \\         |\\___   ___\\\\   __  \\        |\\___   ___\\\\  \\|\\  \\|\\  ___ \\     \n" +
+                "\\ \\  \\    \\ \\  \\ \\   __/|\\ \\  \\    \\ \\  \\___|\\ \\  \\|\\  \\ \\  \\\\\\__\\ \\  \\ \\   __/|        \\|___ \\  \\_\\ \\  \\|\\  \\       \\|___ \\  \\_\\ \\  \\\\\\  \\ \\   __/|    \n" +
+                " \\ \\  \\  __\\ \\  \\ \\  \\_|/_\\ \\  \\    \\ \\  \\    \\ \\  \\\\\\  \\ \\  \\\\|__| \\  \\ \\  \\_|/__           \\ \\  \\ \\ \\  \\\\\\  \\           \\ \\  \\ \\ \\   __  \\ \\  \\_|/__  \n" +
+                "  \\ \\  \\|\\__\\_\\  \\ \\  \\_|\\ \\ \\  \\____\\ \\  \\____\\ \\  \\\\\\  \\ \\  \\    \\ \\  \\ \\  \\_|\\ \\           \\ \\  \\ \\ \\  \\\\\\  \\           \\ \\  \\ \\ \\  \\ \\  \\ \\  \\_|\\ \\ \n" +
+                "   \\ \\____________\\ \\_______\\ \\_______\\ \\_______\\ \\_______\\ \\__\\    \\ \\__\\ \\_______\\           \\ \\__\\ \\ \\_______\\           \\ \\__\\ \\ \\__\\ \\__\\ \\_______\\\n" +
+                "    \\|____________|\\|_______|\\|_______|\\|_______|\\|_______|\\|__|     \\|__|\\|_______|            \\|__|  \\|_______|            \\|__|  \\|__|\\|__|\\|_______|\n" +
+                " ___      ___ _______   ___  ___  ___  ________  ___       _______           ________  _______   ________   _________  ________  ___                    \n" +
+                "|\\  \\    /  /|\\  ___ \\ |\\  \\|\\  \\|\\  \\|\\   ____\\|\\  \\     |\\  ___ \\         |\\   __  \\|\\  ___ \\ |\\   ___  \\|\\___   ___\\\\   __  \\|\\  \\                   \n" +
+                "\\ \\  \\  /  / | \\   __/|\\ \\  \\\\\\  \\ \\  \\ \\  \\___|\\ \\  \\    \\ \\   __/|        \\ \\  \\|\\  \\ \\   __/|\\ \\  \\\\ \\  \\|___ \\  \\_\\ \\  \\|\\  \\ \\  \\                  \n" +
+                " \\ \\  \\/  / / \\ \\  \\_|/_\\ \\   __  \\ \\  \\ \\  \\    \\ \\  \\    \\ \\  \\_|/__       \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\ \\  \\   \\ \\  \\ \\ \\   __  \\ \\  \\                 \n" +
+                "  \\ \\    / /   \\ \\  \\_|\\ \\ \\  \\ \\  \\ \\  \\ \\  \\____\\ \\  \\____\\ \\  \\_|\\ \\       \\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\ \\  \\   \\ \\  \\ \\ \\  \\ \\  \\ \\  \\____            \n" +
+                "   \\ \\__/ /     \\ \\_______\\ \\__\\ \\__\\ \\__\\ \\_______\\ \\_______\\ \\_______\\       \\ \\__\\\\ _\\\\ \\_______\\ \\__\\\\ \\__\\   \\ \\__\\ \\ \\__\\ \\__\\ \\_______\\          \n" +
+                "    \\|__|/       \\|_______|\\|__|\\|__|\\|__|\\|_______|\\|_______|\\|_______|        \\|__|\\|__|\\|_______|\\|__| \\|__|    \\|__|  \\|__|\\|__|\\|_______|    \n" +
+                "\n");
+
+            Login login = new Login();
+
+            login.loginLogic();
+
+
+
+
+
+
+
+
+
+
+
+        // creates all the objects
 
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
 
@@ -31,14 +63,10 @@ public class Starter {
 
         Contract contract = new Contract(customer1, camper, LocalDate.of(2024, 3, 22), LocalDate.of(2024, 4, 22), "Idek what contract models really are but slay anyways woohoo", 650);
 
-        Contract contract2 = new Contract(customer1, truck, LocalDate.of(2024, 1, 23), LocalDate.of(2024, 1, 24), "text here!", 18000 );
-
-        Contract contract3 = new Contract(denied1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "juhu", 83000);
-        Contract contract4 = new Contract(customer1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "juhu", 83000);
+        Contract contract4 = new Contract(customer1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2024, 1, 24), "juhu", 83000);
 
         vehicleRentalManager.createContract(contract);
-        vehicleRentalManager.createContract(contract2);
-        vehicleRentalManager.createContract(contract3);
+
         vehicleRentalManager.createContract(contract4);
 
     }

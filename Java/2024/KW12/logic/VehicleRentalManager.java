@@ -19,7 +19,6 @@ public class VehicleRentalManager {
 
         // Create Arraylist for customer
         customerList.add(onCustomerList);
-        System.out.println("Customer List" + customerList);
     }
 
     public boolean checkIsMinor(LocalDate date) throws MinorAgeException {
@@ -48,12 +47,12 @@ public class VehicleRentalManager {
 
     public void addPersonToDenyList(Person denylisted) {
         denyList.add(denylisted);
-        System.out.println("Deny List: " + denyList);
+
     }
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
-        System.out.println("Vehicles: " + vehicles.toString());
+
     }
 
     public void createContract(Contract newContract) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
@@ -72,7 +71,6 @@ public class VehicleRentalManager {
         }
 
         contracts.add(newContract);
-        System.out.println("Contracts: " + contracts.toString());
 
     }
 
