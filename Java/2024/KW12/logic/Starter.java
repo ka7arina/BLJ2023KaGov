@@ -1,11 +1,12 @@
 package logic;
+import exceptions.DenylistedPersonException;
 import exceptions.MinorAgeException;
 import vehicles.Camper;
 import vehicles.Truck;
 import java.time.LocalDate;
 
 public class Starter {
-    public static void main(String[] args) throws MinorAgeException {
+    public static void main(String[] args) throws MinorAgeException, DenylistedPersonException {
 
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
 
@@ -31,8 +32,10 @@ public class Starter {
 
         Contract contract2 = new Contract(customer2, truck, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "text here!", 18000 );
 
+        Contract contract3 = new Contract(denied1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "juhu", 83000);
         vehicleRentalManager.createContract(contract);
         vehicleRentalManager.createContract(contract2);
+        vehicleRentalManager.createContract(contract3);
 
     }
 }

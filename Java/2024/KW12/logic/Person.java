@@ -10,6 +10,8 @@ public class Person {
     private String address;
     private String phoneNumber;
 
+    private Person denied;
+
     // Constructor
     public Person(String firstName, String lastName, LocalDate birthYear, String address, String phoneNumber) {
 
@@ -59,6 +61,14 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Person getDenied() {
+        return denied;
+    }
+
+    public void setDenied(Person denied) {
+        this.denied = denied;
     }
 
     @Override

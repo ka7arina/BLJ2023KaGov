@@ -11,6 +11,7 @@ public class Contract {
     public int leasingRate;
     public Vehicle vehicle;
 
+
     public Contract(Person person, Vehicle vehicle, LocalDate startDate, LocalDate endDate, String contractModel, int leasingRate) {
         this.person = person;
         this.startDate = startDate;

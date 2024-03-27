@@ -1,4 +1,6 @@
 package logic;
+import exceptions.DenylistedPersonException;
+import exceptions.LeaseLengthCollisionException;
 import exceptions.MinorAgeException;
 
 import java.time.LocalDate;
@@ -16,7 +18,7 @@ public class VehicleRentalManager {
     public void addCustomerList(Person onCustomerList) {
 
         // Create Arraylist for customer
-            customerList.add(onCustomerList);
+        customerList.add(onCustomerList);
         System.out.println("Customer List" + customerList);
     }
 
@@ -27,25 +29,48 @@ public class VehicleRentalManager {
         return false;
     }
 
+    public boolean checkIsDenied(Person person) throws DenylistedPersonException {
+        if (denyList.contains(person)) {
+            throw new DenylistedPersonException("go away omg don't rent vehicles here again");
+        }
+        return false;
+    }
+
+    public boolean checkIsCollision(Contract contract) throws LeaseLengthCollisionException {
+        if () {
+            throw new LeaseLengthCollisionException("You cannot lease at the same time as someone else");
+        }
+        return false;
+    }
+
     public void addPersonToDenyList(Person denylisted) {
         denyList.add(denylisted);
         System.out.println("Deny List: " + denyList);
     }
 
     public void addVehicle(Vehicle vehicle) {
-    vehicles.add(vehicle);
+        vehicles.add(vehicle);
         System.out.println("Vehicles: " + vehicles.toString());
     }
 
-    public void createContract(Contract newContract) throws MinorAgeException {
-        newContract.getPerson().getBirthYear();
-
-        if(!checkIsMinor(newContract.getPerson().getBirthYear())) {
-            contracts.add(newContract);
-            System.out.println("Contracts: " + contracts.toString());
-        } else {
+    public boolean createContract(Contract newContract) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
+        // checks if minor
+        if (checkIsMinor(newContract.getPerson().getBirthYear())) {
             throw new MinorAgeException("You must be 18 years or older!");
         }
 
+        // checks if on denylist
+        if (checkIsDenied(newContract.getPerson().getDenied())) {
+            throw new DenylistedPersonException("Go away OMG, don't rent vehicles here again.");
+        }
+
+        if ()
+
+        contracts.add(newContract);
+        System.out.println("Contracts: " + contracts.toString());
+
+        return true;
     }
+
+
 }
