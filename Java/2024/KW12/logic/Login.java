@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Login {
+    private VehicleRentalManager vehicleRentalManager;
+
+    public Login(VehicleRentalManager vehicleRentalManager) {
+        this.vehicleRentalManager = vehicleRentalManager;
+    }
 
     public void loginLogic() throws InterruptedException {
 
@@ -29,7 +34,7 @@ public class Login {
             }
 
             if (userName.equals("admin") && userConfirmation.equals("yes")) {
-                Admin admin = new Admin();
+                Admin admin = new Admin(vehicleRentalManager);
                 admin.adminLogic();
                 break;
             } else if (userName.equals("customer") && userConfirmation.equals("yes")) {

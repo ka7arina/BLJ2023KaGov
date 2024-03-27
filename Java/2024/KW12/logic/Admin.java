@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Admin {
 
+    private VehicleRentalManager vehicleRentalManager;
+
+    public Admin(VehicleRentalManager vehicleRentalManager) {
+        this.vehicleRentalManager = vehicleRentalManager;
+    }
+
     public void adminLogic() {
 
         Scanner userInput = new Scanner(System.in);
@@ -18,10 +24,9 @@ public class Admin {
                     "see customers -> sc\n");
         }
 
-        if (choose.equals("scc")) {
-            VehicleRentalManager contracts = new VehicleRentalManager();
-            System.out.println(contracts.contracts);
-        }
+            if (choose.equals("scc")) {
+                System.out.println("Contracts: " + vehicleRentalManager.contracts);
+            }
 
         if (choose.equals("sv")) {
             VehicleRentalManager vehicles = new VehicleRentalManager();
