@@ -37,8 +37,11 @@ public class VehicleRentalManager {
     }
 
     public boolean checkIsCollision(Contract contract) throws LeaseLengthCollisionException {
-        if () {
-            throw new LeaseLengthCollisionException("You cannot lease at the same time as someone else");
+        for (Contract existingContract : contracts) { // Assuming `contracts` is a collection of existing contracts
+            if (!contract.getStartDate().isAfter(existingContract.getEndDate()) &&
+                    !contract.getEndDate().isBefore(existingContract.getStartDate())) {
+                throw new LeaseLengthCollisionException("You cannot lease at the same time as someone else");
+            }
         }
         return false;
     }
@@ -64,7 +67,7 @@ public class VehicleRentalManager {
             throw new DenylistedPersonException("Go away OMG, don't rent vehicles here again.");
         }
 
-        if ()
+        checkIsCollision(newContract);
 
         contracts.add(newContract);
         System.out.println("Contracts: " + contracts.toString());

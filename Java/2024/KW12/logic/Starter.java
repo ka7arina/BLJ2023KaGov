@@ -1,12 +1,13 @@
 package logic;
 import exceptions.DenylistedPersonException;
+import exceptions.LeaseLengthCollisionException;
 import exceptions.MinorAgeException;
 import vehicles.Camper;
 import vehicles.Truck;
 import java.time.LocalDate;
 
 public class Starter {
-    public static void main(String[] args) throws MinorAgeException, DenylistedPersonException {
+    public static void main(String[] args) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
 
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
 
