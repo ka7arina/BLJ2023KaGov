@@ -31,12 +31,15 @@ public class Starter {
 
         Contract contract = new Contract(customer1, camper, LocalDate.of(2024, 3, 22), LocalDate.of(2024, 4, 22), "Idek what contract models really are but slay anyways woohoo", 650);
 
-        Contract contract2 = new Contract(customer2, truck, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "text here!", 18000 );
+        Contract contract2 = new Contract(customer1, truck, LocalDate.of(2024, 1, 23), LocalDate.of(2024, 1, 24), "text here!", 18000 );
 
         Contract contract3 = new Contract(denied1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "juhu", 83000);
+        Contract contract4 = new Contract(customer1, camper, LocalDate.of(2024, 1, 23), LocalDate.of(2025, 1, 23), "juhu", 83000);
+
         vehicleRentalManager.createContract(contract);
         vehicleRentalManager.createContract(contract2);
         vehicleRentalManager.createContract(contract3);
+        vehicleRentalManager.createContract(contract4);
 
     }
 }

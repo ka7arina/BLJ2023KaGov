@@ -37,7 +37,7 @@ public class VehicleRentalManager {
     }
 
     public boolean checkIsCollision(Contract contract) throws LeaseLengthCollisionException {
-        for (Contract existingContract : contracts) { // Assuming `contracts` is a collection of existing contracts
+        for (Contract existingContract : contracts) {
             if (!contract.getStartDate().isAfter(existingContract.getEndDate()) &&
                     !contract.getEndDate().isBefore(existingContract.getStartDate())) {
                 throw new LeaseLengthCollisionException("You cannot lease at the same time as someone else");
@@ -56,7 +56,7 @@ public class VehicleRentalManager {
         System.out.println("Vehicles: " + vehicles.toString());
     }
 
-    public boolean createContract(Contract newContract) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
+    public void createContract(Contract newContract) throws MinorAgeException, DenylistedPersonException, LeaseLengthCollisionException {
         // checks if minor
         if (checkIsMinor(newContract.getPerson().getBirthYear())) {
             throw new MinorAgeException("You must be 18 years or older!");
@@ -67,12 +67,13 @@ public class VehicleRentalManager {
             throw new DenylistedPersonException("Go away OMG, don't rent vehicles here again.");
         }
 
-        checkIsCollision(newContract);
+        if(checkIsCollision(newContract)) {
+            throw new LeaseLengthCollisionException("you cannot lease at the same time as someone else");
+        }
 
         contracts.add(newContract);
         System.out.println("Contracts: " + contracts.toString());
 
-        return true;
     }
 
 
