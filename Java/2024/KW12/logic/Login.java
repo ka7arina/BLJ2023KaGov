@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 public class Login {
 
     public void loginLogic() throws InterruptedException {
+
+        do {
         System.out.println("Login: ");
 
         Scanner login = new Scanner(System.in);
@@ -14,27 +16,30 @@ public class Login {
 
         System.out.println("Do you want to log in as " + userName + "?");
 
-        String userConfirmation = login.nextLine();
+            String userConfirmation = login.nextLine();
 
-        if(userName.equals("admin")) {
-            Admin admin = new Admin();
-            admin.adminLogic();
-        } else if(userName.equals("customer")) {
-            Customer customer = new Customer();
-            customer.customerLogic();
-        } else {
+            if (userConfirmation.equals("yes")) {
+                System.out.println("Logging you in...");
+                TimeUnit.MILLISECONDS.sleep(300);
+            } else if (userConfirmation.equals("no")) {
+                System.out.println("okay!");
+            } else {
+                System.out.println("please input a valid answer");
+            }
 
-        }
+            if (userName.equals("admin") && userConfirmation.equals("yes")) {
+                Admin admin = new Admin();
+                admin.adminLogic();
+                break;
+            } else if (userName.equals("customer") && userConfirmation.equals("yes")) {
+                Customer customer = new Customer();
+                customer.customerLogic();
+                break;
+            } else {
+                System.out.println("Please input a valid user");
+            }
+        } while (true);
 
-        if(userConfirmation.equals("yes")) {
-            System.out.println("Logging you in...");
-            TimeUnit.MILLISECONDS.sleep(300);
 
-        } else if(userConfirmation.equals("no")) {
-            System.out.println("okay!");
-        } else {
-            System.out.println("please input a valid answer");
-        }
     }
-
 }
