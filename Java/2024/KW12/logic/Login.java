@@ -20,11 +20,12 @@ public class Login {
 
             if (userConfirmation.equals("yes")) {
                 System.out.println("Logging you in...");
-                TimeUnit.MILLISECONDS.sleep(300);
+                TimeUnit.MILLISECONDS.sleep(500);
+                System.out.println("...");
             } else if (userConfirmation.equals("no")) {
                 System.out.println("okay!");
             } else {
-                System.out.println("please input a valid answer");
+                System.out.println("Login Denied");
             }
 
             if (userName.equals("admin") && userConfirmation.equals("yes")) {
@@ -36,8 +37,9 @@ public class Login {
                 customer.customerLogic();
                 break;
             } else {
-                System.out.println("Please input a valid user");
+                System.out.println("Login Denied");
             }
+
         } while (true);
 
 

@@ -24,21 +24,6 @@ public class Starter {
                 "   \\ \\__/ /     \\ \\_______\\ \\__\\ \\__\\ \\__\\ \\_______\\ \\_______\\ \\_______\\       \\ \\__\\\\ _\\\\ \\_______\\ \\__\\\\ \\__\\   \\ \\__\\ \\ \\__\\ \\__\\ \\_______\\          \n" +
                 "    \\|__|/       \\|_______|\\|__|\\|__|\\|__|\\|_______|\\|_______|\\|_______|        \\|__|\\|__|\\|_______|\\|__| \\|__|    \\|__|  \\|__|\\|__|\\|_______|    \n" +
                 "\n");
-
-            Login login = new Login();
-
-            login.loginLogic();
-
-
-
-
-
-
-
-
-
-
-
         // creates all the objects
 
         VehicleRentalManager vehicleRentalManager = new VehicleRentalManager();
@@ -68,6 +53,10 @@ public class Starter {
         vehicleRentalManager.createContract(contract);
 
         vehicleRentalManager.createContract(contract4);
+
+        Login login = new Login();
+        login.loginLogic();
+
 
     }
 }
