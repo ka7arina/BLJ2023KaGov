@@ -70,9 +70,11 @@ public class Admin {
                 String color = input3.nextLine();
 
                 Vehicle newVehicle = new Vehicle(name, year, brand, mileage, color);
+
                 vehicleRentalManager.addVehicle(newVehicle);
 
-                System.out.println("Successfully added the vehicle!");
+                System.out.println("Successfully added!");
+
             }
 
             if (choose.equals("exit")) {
