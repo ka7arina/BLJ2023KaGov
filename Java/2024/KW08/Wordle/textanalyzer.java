@@ -15,7 +15,6 @@ public class textanalyzer {
     private static final String GREY = "\u001B[47m";
     private static final String BLACK = "\u001B[30m";
 
-
     public static void wordleMechanic() throws IOException {
         String fileName = "C:/Projects/BLJ2023KaGov/Java/2024/KW08/Wordle/wordlist.txt";
         // puts the data from the file (which was read in filereader.java) into the array list
@@ -45,7 +44,6 @@ public class textanalyzer {
         long beginTime = System.currentTimeMillis();
 
         boolean gameWon = false;
-
 
         for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
             if (attempts < MAX_ATTEMPTS) {
@@ -77,16 +75,12 @@ public class textanalyzer {
 
                 StringBuilder hint = new StringBuilder();
 
-
                     userinput = userinput.toLowerCase();
-
 
                     for (int i = 0; i < userinput.length(); i++) {
 
-
                             char guessedChar = userinput.charAt(i);
                             char secretChar = randomWord.charAt(i);
-
 
                             if (guessedChar == secretChar) {
                                 hint.append(GREEN + " " + guessedChar + " " + RESET); // correct letter correct position
@@ -105,7 +99,6 @@ public class textanalyzer {
 
             }
         System.out.println("\nCome back " + YELLOW2 + "TOMORROW " + RESET + "for the next word!!!");
-
 
             long endTime = System.currentTimeMillis();
             long difference = endTime - beginTime;
