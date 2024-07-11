@@ -3,10 +3,15 @@ package ch.noseryoung.blj;
 public class Item {
     private String name;
     private String description;
+    private boolean isAttackable;
 
-    public Item(String name, String description) {
+    private String attackDescription;
+
+    public Item(String name, String description, boolean isAttackable, String attackDescription) {
         this.name = name;
         this.description = description;
+        this.isAttackable = isAttackable;
+        this.attackDescription = attackDescription;
     }
 
     public String getName() {
@@ -16,4 +21,13 @@ public class Item {
     public String getDescription() {
         return description;
     }
+
+    public String getAttackDescription() {
+        return attackDescription;
+    }
+
+    public boolean isAttackable() {
+        return isAttackable;
+    }
+
 }

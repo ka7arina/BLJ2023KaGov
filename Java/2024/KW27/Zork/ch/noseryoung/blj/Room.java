@@ -20,7 +20,7 @@ public class Room {
 
     public void setExit(String direction, Room neighbor) {
         exits.put(direction, neighbor);
-        doorStatus.put(direction, false);  // By default, doors are unlocked
+        doorStatus.put(direction, false);
     }
 
     public String getShortDescription() {

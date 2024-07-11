@@ -35,8 +35,10 @@ public class Game {
 
         currentRoom = spawn;
 
-        Item key = new Item("key", "A small rusty key.");
-        Item bread = new Item("bread", "A loaf of freshly baked bread.");
+        Item key = new Item("key", "A small rusty key.", false, " ");
+        Item bread = new Item("bread", "A loaf of freshly baked bread.", false, " ");
+        Item mailbox = new Item("mailbox", "A rusty white old mailbox", true, "you hit the hard metal with your bare hands JWNSBBDJSJKAJWHWB - wow. now your hand is bleeding! why did you think attacking a mailbox would be a good idea??? dumbass.");
+        spawn.addItem(mailbox);
         spawn.addItem(key);
         fairylair.addItem(bread);
 
@@ -111,6 +113,20 @@ public class Game {
                         System.out.println("Unlock which direction?");
                     }
                     break;
+                case "attack":
+                    if (argument != null) {
+                        attackItem(argument);
+                    } else {
+                        System.out.println("Attack what?");
+                    }
+                    break;
+                case "open":
+                    if (argument != null) {
+                        openItem(argument);
+                    } else {
+                        System.out.println("Open what?");
+                    }
+                    break;
                 default:
                     System.out.println("I don't know what you mean...");
                     break;
@@ -121,7 +137,7 @@ public class Game {
     }
 
     private void printHelp() {
-        System.out.println("You are lost. You are alone. You wander around at the university.");
+        System.out.println("You are lost. You are alone. You wander around in a magical forest.");
         System.out.println("Your command words are:");
         System.out.println("   go [direction], take [item], drop [item], examine [item], inventory, help, quit");
     }
@@ -147,14 +163,15 @@ public class Game {
 
     public void takeItem(String itemName) {
         Item item = getItemInRoom(itemName);
-        if (item != null) {
+        if (!itemName.equals("mailbox") && item != null) {
             player.addItem(item);
             currentRoom.removeItem(item);
             System.out.println("You take the " + item.getName() + ".");
         } else {
-            System.out.println("There is no " + itemName + " here.");
+            System.out.println("You can't take " + itemName + " here.");
         }
     }
+
 
     public void dropItem(String itemName) {
         Item item = player.getItemByName(itemName);
@@ -201,6 +218,15 @@ public class Game {
         return null;
     }
 
+    public void attackItem(String itemName) {
+        Item item = getItemInRoom(itemName);
+        if (item != null && item.isAttackable()) {
+            System.out.println("You attack the " + item.getName() + ": " + item.getAttackDescription());
+        } else {
+            System.out.println("You can't attack " + itemName + " here, dumbass.");
+        }
+    }
+
     public void unlockDoor(String direction) {
         if (currentRoom.isLocked(direction)) {
             Item key = player.getItemByName("key");
@@ -213,5 +239,16 @@ public class Game {
         } else {
             System.out.println("The door is already unlocked.");
         }
+    }
+
+
+    private Item openItem(String itemName) {
+        Item item = getItemInRoom(itemName);
+        if (item != null) {
+            System.out.println("You open the " + item.getName());
+        } else {
+            System.out.println("You can't open " + itemName + ", dumbass.");
+        }
+        return item;
     }
 }
