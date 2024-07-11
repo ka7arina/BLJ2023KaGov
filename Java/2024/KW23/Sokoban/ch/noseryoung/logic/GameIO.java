@@ -1,4 +1,4 @@
-package ch.noseryoung;
+package ch.noseryoung.logic;
 
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
@@ -52,12 +52,12 @@ public class GameIO extends JFrame {
 
     private void loadImages() {
         try {
-            blueBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/pop.png"));
-            blackBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/bricks.png"));
-            greenBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/zari.png"));
-            groundImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/ground.png"));
-            turqouiseBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/ma-ri-na.png"));
-            playerImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/doitmyway.png"));
+            blueBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/pop.png"));
+            blackBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/bricks.png"));
+            greenBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/zari.png"));
+            groundImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/ground.png"));
+            turqouiseBoxImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/ma-ri-na.png"));
+            playerImage = ImageIO.read(new File("C:/Projects/BLJ2023KaGov/Java/2024/KW23/Sokoban/ch/noseryoung/images/doitmyway.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,9 @@
-package ch.noseryoung;
+package ch.noseryoung.logic;
+
+import ch.noseryoung.LevelPresets;
 
 import java.awt.*;
+import java.util.logging.Level;
 
 public class Game {
     private int[][] gameField;
@@ -13,21 +16,23 @@ public class Game {
      * Makes a deep copy of the initial game field.
      */
     public Game() {
-        this(new int[][]{
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 1, 1, 1, 1, 0, 0},
-                {0, 1, 1, 1, 0, 0, 0, 1, 0, 0},
-                {0, 1, 4, 0, 3, 2, 0, 1, 0, 0},
-                {0, 1, 1, 1, 0, 3, 4, 1, 0, 0},
-                {0, 1, 4, 1, 1, 3, 0, 1, 0, 0},
-                {0, 1, 0, 1, 0, 4, 0, 1, 1, 0},
-                {0, 1, 3, 0, 3, 0, 3, 4, 1, 0},
-                {0, 1, 0, 0, 0, 4, 0, 0, 1, 0},
-                {0, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        });
-    }
 
+        LevelPresets levels = new LevelPresets();
+
+        switch(levels) {
+            case level1:
+                break;
+            case level2:
+                break;
+            case level3:
+                break;
+            case level4:
+                break;
+            default:
+        }
+        // create switch case for levels, everytime you win a level the level++ counter goes up -> so it switches to the next level
+
+    }
     /**
      * Initializes the game with a custom game field.
      *
@@ -36,13 +41,11 @@ public class Game {
     public Game(int[][] gameField) {
         this.gameField = gameField;
 
-        // Make a deep copy of the initial game field
         initialGameField = new int[gameField.length][];
         for (int i = 0; i < gameField.length; i++) {
             initialGameField[i] = gameField[i].clone();
         }
 
-        // Find the player's initial location and store it
         for (int x = 0; x < getColCount(); x++) {
             for (int y = 0; y < getRowCount(); y++) {
                 if (gameField[x][y] == 2) {
@@ -93,23 +96,23 @@ public class Game {
         if (canMove(newX, newY)) {
             /* Check if there is a box and if it can be moved */
             if ((gameField[newX][newY] == 3 || gameField[newX][newY] == 5) && (gameField[nextX][nextY] == 0 || gameField[nextX][nextY] == 4)) {
-                moveBox(newX, newY, nextX, nextY); // Move the box first
+                moveBox(newX, newY, nextX, nextY);
             }
 
             /* Ensure the player can move to the new position */
             if (gameField[newX][newY] != 3 && gameField[newX][newY] != 5) {
                 if (movingFromDestination) {
-                    gameField[playerLoc.x][playerLoc.y] = 4; // Reset to destination if moving off it
+                    gameField[playerLoc.x][playerLoc.y] = 4;
                 } else if (movingFromCompletedBox) {
-                    gameField[playerLoc.x][playerLoc.y] = 4; // Reset to destination if moving off it
+                    gameField[playerLoc.x][playerLoc.y] = 4;
                 } else {
-                    gameField[playerLoc.x][playerLoc.y] = 0; // Clear current player position
+                    gameField[playerLoc.x][playerLoc.y] = 0;
                 }
 
-                playerLoc.translate(dx, dy); // Update player location
+                playerLoc.translate(dx, dy);
 
                 if (gameField[playerLoc.x][playerLoc.y] != 4 && gameField[playerLoc.x][playerLoc.y] != 5) {
-                    gameField[playerLoc.x][playerLoc.y] = 2; // Set new player position
+                    gameField[playerLoc.x][playerLoc.y] = 2;
                 }
             }
 
