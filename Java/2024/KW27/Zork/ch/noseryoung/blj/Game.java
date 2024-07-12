@@ -160,7 +160,6 @@ public class Game {
         }
     }
 
-
     public void takeItem(String itemName) {
         Item item = getItemInRoom(itemName);
         if (!itemName.equals("mailbox") && item != null) {
